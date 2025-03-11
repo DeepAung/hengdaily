@@ -1,7 +1,6 @@
 class_name Event
 extends Node
 
-var id: int
 var display_name: String
 var description: String
 var _apply_func: Callable # func(player: Player) -> void
