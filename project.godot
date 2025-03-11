@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="HengDaily"
+run/main_scene="uid://2g6jtn4oljhl"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="HengDaily"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
