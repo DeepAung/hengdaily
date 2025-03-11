@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cirbwe5iypvc4"]
+
+[ext_resource type="Script" uid="uid://bb48j4e11x0m4" path="res://src/entities/card_description.gd" id="1_sftsw"]
+
+[node name="CardDescription" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sftsw")
+
+[node name="DescriptionFrameTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
