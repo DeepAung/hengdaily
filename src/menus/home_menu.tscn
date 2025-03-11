@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://2g6jtn4oljhl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
