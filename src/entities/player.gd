@@ -18,7 +18,7 @@ func _init(id: int, display_name: String, age: int, gpa: int, birthday: Time) ->
 	self.gpa = gpa
 	self.birthday = birthday
 	
-	# TODO: use input from above to calculate luck below
+	# TODO: use input from above to calculate luck below (from -100 to +100)
 	self.luck_love = 0
 	self.luck_study = 0
 	self.luck_health = 0
