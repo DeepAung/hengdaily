@@ -11,21 +11,39 @@ script = ExtResource("1_6j817")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 73.0
-offset_right = 784.0
-offset_bottom = 224.0
+offset_left = 450.0
+offset_top = 200.0
+offset_right = 774.0
+offset_bottom = 351.0
+
+[node name="Status" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
 
 [node name="Email" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 placeholder_text = "Email"
 
-[node name="Pwd" type="LineEdit" parent="VBoxContainer"]
+[node name="Password" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 placeholder_text = "Password"
+secret = true
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="SignInBtn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Sign in"
+text = "login"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_sign_in_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Don't have an account?"
+
+[node name="LinkToSignUp" type="LinkButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sign up"
+
+[connection signal="pressed" from="VBoxContainer/SignInBtn" to="." method="_on_log_in_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkToSignUp" to="." method="_on_link_to_sign_up_pressed"]

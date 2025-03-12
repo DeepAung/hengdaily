@@ -1,18 +1,43 @@
 extends Control
 
-func _ready() -> void:
-	Firebase.Auth.login_succeeded.connect(on_sign_in_success)
-	Firebase.Auth.login_failed.connect(on_sign_in_fail)
-
-func _on_sign_in_pressed() -> void:
+func _ready():
+	Firebase.Auth.login_succeeded.connect(_on_FirebaseAuth_login_succeeded)
+	Firebase.Auth.signup_succeeded.connect(_on_FirebaseAuth_login_succeeded)
+	Firebase.Auth.login_failed.connect(on_login_failed)
+	Firebase.Auth.signup_failed.connect(on_signup_failed)
+	
+func _on_log_in_pressed():
+	$VBoxContainer/Status.text =  "login...."
 	var email = $VBoxContainer/Email.text
-	var password = $VBoxContainer/Pwd.text
+	var password = $VBoxContainer/Password.text
 	Firebase.Auth.login_with_email_and_password(email, password)
 
-func on_sign_in_success(auth):
-	print(auth)
+func _on_register_pressed():
+	var email = $VBoxContainer/Email.text
+	var password = $VBoxContainer/Password.text
+	var confirmPassword = $VBoxContainer/ConfirmPassword.text
+	if(password != confirmPassword):
+		on_signup_failed("Passwords don't match", "Passwords don't match")
+	else:
+		Firebase.Auth.signup_with_email_and_password(email, password)
 
-func on_sign_in_fail(err, msg):
-	print(err)
-	print(msg)
-	print("success")
+func _on_FirebaseAuth_login_succeeded(auth):
+	$VBoxContainer/Status.text =  "login successfully"
+	print(auth)
+	
+func on_login_failed(error_code, message):
+	print("error code: " + str(error_code))
+	print("message: " + str(message))
+	$VBoxContainer/Status.text =  "login failed"
+
+func on_signup_failed(error_code, message):
+	print("error code: " + str(error_code))
+	print("message: " + str(message))
+	$VBoxContainer/Status.text = str(message)
+
+func _on_link_to_sign_up_pressed() -> void:
+	get_tree().change_scene_to_file("res://src/menus/signup_menu.tscn")
+
+
+func _on_link_to_sign_pressed() -> void:
+	get_tree().change_scene_to_file("res://src/menus/authentication_menu.tscn")
