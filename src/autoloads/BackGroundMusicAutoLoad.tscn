@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdi4yy6gi2il6"]
-
-[ext_resource type="AudioStream" uid="uid://pdjuym7dtg7m" path="res://music/doraemon_theme.mp3" id="1_ttxiu"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_ttxiu")
-autoplay = true
-bus = &"BackgroundMusic"
