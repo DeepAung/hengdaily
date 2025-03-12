@@ -15,6 +15,10 @@ run/main_scene="uid://2g6jtn4oljhl"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BackGroundMusicAutoLoad="*res://src/autoloads/BackGroundMusicAutoLoad.tscn"
+
 [dotnet]
 
 project/assembly_name="HengDaily"
