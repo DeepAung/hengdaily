@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl68crnynyq33"]
+[gd_scene load_steps=11 format=3 uid="uid://dl68crnynyq33"]
 
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="1_45cec"]
 [ext_resource type="Script" uid="uid://c664g48jb1coo" path="res://src/menus/setting_menu.gd" id="1_a4o22"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="2_a4o22"]
+[ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="4_0vt8x"]
+[ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="5_on0dy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ci370"]
 texture = ExtResource("1_45cec")
@@ -66,43 +68,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -123.0
-offset_top = -109.0
-offset_right = 126.0
-offset_bottom = 224.0
+offset_left = -235.0
+offset_top = -118.0
+offset_right = 237.0
+offset_bottom = 277.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 27
 
-[node name="Audio" type="Button" parent="VBoxContainer"]
+[node name="BackgroundLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 13
-theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
-theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
-text = "Audio"
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_a4o22")
+theme_override_font_sizes/font_size = 30
+text = "Background Music"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Music" type="Button" parent="VBoxContainer"]
+[node name="bgMusic_slider" type="HSlider" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+max_value = 1.0
+step = 0.001
+scrollable = false
+
+[node name="SoundEffectLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 13
-theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
-theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
-text = "Music"
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_a4o22")
+theme_override_font_sizes/font_size = 30
+text = "Sound Effect"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_slider" type="HSlider" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
 
 [node name="Logout" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -155,7 +160,17 @@ theme_override_fonts/font = ExtResource("2_a4o22")
 theme_override_font_sizes/font_size = 135
 text = "Settings"
 
-[connection signal="pressed" from="VBoxContainer/Audio" to="." method="_on_audio_pressed"]
-[connection signal="pressed" from="VBoxContainer/Music" to="." method="_on_music_pressed"]
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0vt8x")
+bus = &"Sfx"
+
+[node name="Hover-card" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_on0dy")
+bus = &"Sfx"
+
+[connection signal="value_changed" from="VBoxContainer/bgMusic_slider" to="." method="_on_BackgroundMusicSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/sfx_slider" to="." method="_on_sfxSlider_value_changed"]
+[connection signal="mouse_entered" from="VBoxContainer/Logout" to="." method="_on_logout_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Logout" to="." method="_on_logout_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
