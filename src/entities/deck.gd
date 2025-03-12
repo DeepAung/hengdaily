@@ -2,6 +2,7 @@ class_name Deck
 extends Node
 
 var cards: Array[Card]
+var card_is_completed: Array[bool]
 var events: Array[Event]
 
 func _init(cards: Array[Card], events: Array[Event]) -> void:

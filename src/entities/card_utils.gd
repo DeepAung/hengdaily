@@ -7,6 +7,8 @@ enum {
 	TEST_CARD
 }
 
+#Might be a better way
+const enum_size = 1
 
 #TODO: Add cards
 static var cards = {

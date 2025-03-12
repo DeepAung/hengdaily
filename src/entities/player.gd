@@ -10,6 +10,8 @@ var luck_love: int
 var luck_study: int
 var luck_health: int
 var luck_money: int
+var current_cards: Array[Card]
+var event_history: Array[Event]
 
 func _init(id: int, display_name: String, age: int, gpa: int, birthday: Time) -> void:
 	self.id = id
@@ -23,6 +25,12 @@ func _init(id: int, display_name: String, age: int, gpa: int, birthday: Time) ->
 	self.luck_study = 0
 	self.luck_health = 0
 	self.luck_money = 0
+
+
+func get_latest_event() -> Event:
+	if len(self.event_history) == 0:
+		return null
+	return self.event_history[len(self.event_history) - 1]
 
 
 #Utility functions for adding and substracting luck from players
