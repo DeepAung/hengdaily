@@ -1,7 +1,161 @@
-[gd_scene format=3 uid="uid://dl68crnynyq33"]
+[gd_scene load_steps=9 format=3 uid="uid://dl68crnynyq33"]
+
+[ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="1_45cec"]
+[ext_resource type="Script" uid="uid://c664g48jb1coo" path="res://src/menus/setting_menu.gd" id="1_a4o22"]
+[ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="2_a4o22"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ci370"]
+texture = ExtResource("1_45cec")
+modulate_color = Color(0.384407, 0.375826, 0.330917, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vt8x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on0dy"]
+bg_color = Color(0.228353, 2.42158e-07, 0.00743742, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htvrs"]
+bg_color = Color(0.165976, 2.88785e-07, 0.0040952, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1r8x"]
+bg_color = Color(0.274488, 0, 0.0106818, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4o22")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ci370")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -109.0
+offset_right = 126.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="Audio" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
+text = "Audio"
+
+[node name="Music" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
+text = "Music"
+
+[node name="Logout" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
+text = "Logout"
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
+text = "Back
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_top = 46.0
+offset_right = 235.0
+offset_bottom = 182.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 25
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 50
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_a4o22")
+theme_override_font_sizes/font_size = 135
+text = "Settings"
+
+[connection signal="pressed" from="VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="VBoxContainer/Music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="VBoxContainer/Logout" to="." method="_on_logout_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
