@@ -11,18 +11,23 @@ config_version=5
 [application]
 
 config/name="HengDaily"
-run/main_scene="uid://2g6jtn4oljhl"
+run/main_scene="uid://n0i6hl0xswsc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 BackGroundMusicPlayer="*res://src/autoloads/background_music_player.tscn"
 GameManager="*res://src/autoloads/game_manager.gd"
 
 [dotnet]
 
 project/assembly_name="HengDaily"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
 
 [rendering]
 

@@ -1,21 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://n0i6hl0xswsc"]
+[gd_scene load_steps=2 format=3 uid="uid://c3k5xwq38qepi"]
 
-[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/sys/AuthManager.gd" id="1_6j817"]
+[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/sys/AuthManager.gd" id="1_puoug"]
 
-[node name="Control" type="Control"]
+[node name="SignUpMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6j817")
+script = ExtResource("1_puoug")
 
 [node name="Status" type="Label" parent="."]
 layout_mode = 1
@@ -25,9 +21,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -162.0
-offset_top = -104.5
+offset_top = -123.5
 offset_right = 162.0
-offset_bottom = -81.5
+offset_bottom = -100.5
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
@@ -41,9 +37,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -162.0
-offset_top = -75.5
+offset_top = -95.0
 offset_right = 162.0
-offset_bottom = 75.5
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -56,9 +52,14 @@ layout_mode = 2
 placeholder_text = "Password"
 secret = true
 
-[node name="SignInBtn" type="Button" parent="VBoxContainer"]
+[node name="ConfirmPassword" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
-text = "login"
+placeholder_text = "Confirm Password"
+secret = true
+
+[node name="SignUpBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sign up"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -66,11 +67,11 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Don't have an account?"
+text = "Already have an account?"
 
-[node name="LinkToSignUp" type="LinkButton" parent="VBoxContainer/HBoxContainer"]
+[node name="LinkToSignIn" type="LinkButton" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Sign up"
+text = "Sign in"
 
-[connection signal="pressed" from="VBoxContainer/SignInBtn" to="." method="_on_log_in_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkToSignUp" to="." method="_on_link_to_sign_up_pressed"]
+[connection signal="pressed" from="VBoxContainer/SignUpBtn" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkToSignIn" to="." method="_on_link_to_sign_pressed"]

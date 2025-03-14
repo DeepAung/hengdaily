@@ -30,7 +30,9 @@ func _on_quit_pressed() -> void:
 	timer.one_shot = true
 	timer.start()
 	await timer.timeout
-	get_tree().quit()
+	Firebase.Auth.logout()
+	get_tree().change_scene_to_file("res://src/menus/authentication_menu.tscn")
+	#get_tree().quit()
 	
 func _on_quit_mouse_entered() -> void:
 	$"Hover-card".play()
