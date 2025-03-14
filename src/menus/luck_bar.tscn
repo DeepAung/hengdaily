@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cr8v0ucjsrhh0"]
+
+[node name="LuckBar" type="PanelContainer"]

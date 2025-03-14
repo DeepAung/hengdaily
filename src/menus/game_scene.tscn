@@ -28,3 +28,7 @@ offset_bottom = 40.0
 [node name="EventHistory" type="Button" parent="."]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="Cards" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+BackGroundMusicAutoLoad="*res://src/BackGroundMusicAutoLoad.tscn"
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 BackGroundMusicPlayer="*res://src/autoloads/background_music_player.tscn"
 GameManager="*res://src/autoloads/game_manager.gd"

@@ -11,6 +11,7 @@ var luck_study: int
 var luck_health: int
 var luck_money: int
 var current_cards: Array[Card]
+var completed_cards: Array[bool]
 var event_history: Array[Event]
 var last_login_unix: int
 
