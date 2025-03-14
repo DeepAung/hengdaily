@@ -15,6 +15,7 @@ func _ready() -> void:
 #		      flip animation (flip to the corresponding card texture(s) that was randomized after the DailyEventPopup
 		return
 	
+	$LuckChart.set_luck_values(GameManager.player.luck_love, GameManager.player.luck_money, GameManager.player.luck_health, GameManager.player.luck_study)
 	load_cards(GameManager.player)
 	
 

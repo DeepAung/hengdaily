@@ -1,37 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://gebkjvtnkb21"]
+[gd_scene load_steps=4 format=3 uid="uid://gebkjvtnkb21"]
 
 [ext_resource type="Script" uid="uid://b4ha3jqw0n3et" path="res://src/menus/game_scene.gd" id="1_bpp04"]
+[ext_resource type="Texture2D" uid="uid://c1wa8bku3gk2a" path="res://assets/frame/blue.png" id="2_ik070"]
+[ext_resource type="PackedScene" uid="uid://rirti5s2anxq" path="res://src/menus/luck_chart.tscn" id="3_j12tk"]
 
 [node name="GameScene" type="Node"]
 script = ExtResource("1_bpp04")
 
 [node name="Background" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CardDeck" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LuckChart" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 58.0
+offset_top = 54.0
+offset_right = 188.0
+offset_bottom = 249.0
+texture = ExtResource("2_ik070")
 
 [node name="FortuneTeller" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 40.0
+grow_horizontal = 2
 
 [node name="EventHistory" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="Cards" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="DailyEventPopup" type="Control" parent="."]
 visible = false
@@ -39,3 +62,16 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="LuckChart" parent="." instance=ExtResource("3_j12tk")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -187.0
+offset_right = 160.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0

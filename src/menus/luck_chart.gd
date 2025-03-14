@@ -1,4 +1,5 @@
-extends Control
+extends PanelContainer
+class_name LuckChart
 
 var luck_love: int
 var luck_money: int
@@ -7,8 +8,7 @@ var luck_study: int
 
 
 func _ready() -> void:
-	var player = GameManager.player
-	set_luck_values(player.luck_love, player.luck_money, player.luck_health, player.luck_study)
+	pass
 
 
 func update_bars() -> void:
