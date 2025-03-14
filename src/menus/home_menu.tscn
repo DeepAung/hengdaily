@@ -148,11 +148,9 @@ text = "Heng Daily"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q5boe")
-bus = &"Sfx"
 
 [node name="Hover-card" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ckhof")
-bus = &"Sfx"
 
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]

@@ -32,3 +32,10 @@ offset_bottom = 8.0
 [node name="Cards" type="HBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="DailyEventPopup" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
