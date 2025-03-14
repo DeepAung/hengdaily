@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dky2lq0risp5m"]
-
-[ext_resource type="AudioStream" uid="uid://cphqi6mn0or67" path="res://assets/background-music/that-game-arcade-236111.mp3" id="1_1gnv3"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_1gnv3")
-autoplay = true
-bus = &"BackgroundMusic"
