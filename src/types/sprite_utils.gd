@@ -1,5 +1,5 @@
-extends Node
 class_name SpriteUtils
+extends Node
 
 enum Icon {
 	LOVE,
