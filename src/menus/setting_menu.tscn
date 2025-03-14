@@ -110,39 +110,6 @@ layout_mode = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Logout" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 13
-theme_override_fonts/font = ExtResource("4_on0dy")
-theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
-theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
-text = "Logout"
-
-[node name="Back" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 13
-theme_override_fonts/font = ExtResource("4_on0dy")
-theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
-theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
-text = "Back
-"
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -171,9 +138,35 @@ bus = &"Sfx"
 stream = ExtResource("5_on0dy")
 bus = &"Sfx"
 
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 103.0
+offset_right = 232.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("4_on0dy")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
+text = "Back
+"
+
 [connection signal="value_changed" from="VBoxContainer/bgMusic_slider" to="." method="_on_BackgroundMusicSlider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/sfx_slider" to="." method="_on_sfxSlider_value_changed"]
-[connection signal="mouse_entered" from="VBoxContainer/Logout" to="." method="_on_logout_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Logout" to="." method="_on_logout_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/Back" to="." method="_on_back_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

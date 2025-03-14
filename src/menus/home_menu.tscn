@@ -121,7 +121,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_uimqf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uimqf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5hbdx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xnnxi")
-text = "Exit"
+text = "Log out"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
