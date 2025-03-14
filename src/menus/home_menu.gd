@@ -1,7 +1,6 @@
 extends Control
 
 
-
 func _on_play_pressed() -> void:
 	print("PLAYED")
 	$Click.play()
@@ -19,7 +18,7 @@ func _on_setting_pressed() -> void:
 	timer.start()
 	await timer.timeout
 	get_tree().change_scene_to_file("res://src/menus/setting_menu.tscn")
-	
+
 func _on_setting_mouse_entered() -> void:
 	$"Hover-card".play()
 

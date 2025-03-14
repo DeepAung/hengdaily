@@ -5,26 +5,31 @@ var id: int
 var display_name: String
 var age: int
 var gpa: int
-var birthday: Time
+var birthday_unix: int
 var luck_love: int
 var luck_study: int
 var luck_health: int
 var luck_money: int
 var current_cards: Array[Card]
 var event_history: Array[Event]
+var last_login_unix: int
 
-func _init(id: int, display_name: String, age: int, gpa: int, birthday: Time) -> void:
+func _init(id: int, display_name: String, age: int, gpa: int, birthday_unix: int) -> void:
 	self.id = id
 	self.display_name = display_name
 	self.age = age
 	self.gpa = gpa
-	self.birthday = birthday
+	self.birthday_unix = birthday_unix
 	
 	# TODO: use input from above to calculate luck below (from -100 to +100)
 	self.luck_love = 0
 	self.luck_study = 0
 	self.luck_health = 0
 	self.luck_money = 0
+	
+	self.current_cards = []
+	self.event_history = []
+	self.last_login_unix = -1
 
 
 func get_latest_event() -> Event:

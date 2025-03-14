@@ -1,13 +1,14 @@
-class_name GameManager
+# this script is instantiate when start game and alive during scene changing (see Autoload)
 extends Node
 
 var player: Player
 var deck: Deck
 
+func _init() -> void:
+	randomize()
 
-# TODO: randomize() on ready in scene
-func _init(player: Player, deck: Deck) -> void:
+# this function should be called when the game scene is starting
+# fetch player from firebase and select appropriate deck
+func setup(player: Player, deck: Deck) -> void:
 	self.player = player
 	self.deck = deck
-	self.current_cards = []
-	self.event_history = []
