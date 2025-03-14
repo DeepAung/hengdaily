@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://gebkjvtnkb21"]
+
+[ext_resource type="Script" uid="uid://b4ha3jqw0n3et" path="res://src/menus/game_scene.gd" id="1_bpp04"]
+
+[node name="GameScene" type="Node"]
+script = ExtResource("1_bpp04")
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardDeck" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LuckChart" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FortuneTeller" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EventHistory" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0

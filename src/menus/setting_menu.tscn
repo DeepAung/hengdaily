@@ -1,7 +1,172 @@
-[gd_scene format=3 uid="uid://dl68crnynyq33"]
+[gd_scene load_steps=12 format=3 uid="uid://dl68crnynyq33"]
+
+[ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="1_45cec"]
+[ext_resource type="Script" uid="uid://c664g48jb1coo" path="res://src/menus/setting_menu.gd" id="1_a4o22"]
+[ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="2_a4o22"]
+[ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="4_0vt8x"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="4_on0dy"]
+[ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="5_on0dy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ci370"]
+texture = ExtResource("1_45cec")
+modulate_color = Color(0.384407, 0.375826, 0.330917, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vt8x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on0dy"]
+bg_color = Color(0.228353, 2.42158e-07, 0.00743742, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htvrs"]
+bg_color = Color(0.165976, 2.88785e-07, 0.0040952, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1r8x"]
+bg_color = Color(0.274488, 0, 0.0106818, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4o22")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ci370")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = -118.0
+offset_right = 237.0
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="BackgroundLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_a4o22")
+theme_override_font_sizes/font_size = 30
+text = "Background Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bgMusic_slider" type="HSlider" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+scrollable = false
+
+[node name="SoundEffectLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_a4o22")
+theme_override_font_sizes/font_size = 30
+text = "Sound Effect"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_slider" type="HSlider" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_top = 46.0
+offset_right = 235.0
+offset_bottom = 182.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 25
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 50
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_a4o22")
+theme_override_font_sizes/font_size = 135
+text = "Settings"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0vt8x")
+bus = &"Sfx"
+
+[node name="Hover-card" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_on0dy")
+bus = &"Sfx"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 103.0
+offset_right = 232.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("4_on0dy")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0vt8x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_on0dy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_htvrs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1r8x")
+text = "Back
+"
+
+[connection signal="value_changed" from="VBoxContainer/bgMusic_slider" to="." method="_on_BackgroundMusicSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/sfx_slider" to="." method="_on_sfxSlider_value_changed"]
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

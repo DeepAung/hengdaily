@@ -4,19 +4,44 @@
 
 [node name="SignUpMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_puoug")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 200.0
-offset_right = 774.0
-offset_bottom = 351.0
-
-[node name="Status" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Status" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -123.5
+offset_right = 162.0
+offset_bottom = -100.5
+grow_horizontal = 2
+grow_vertical = 2
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -95.0
+offset_right = 162.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Email" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2

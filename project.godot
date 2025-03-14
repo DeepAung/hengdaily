@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+BackGroundMusicPlayer="*res://src/autoloads/background_music_player.tscn"
+GameManager="*res://src/autoloads/game_manager.gd"
 
 [dotnet]
 
@@ -26,3 +28,7 @@ project/assembly_name="HengDaily"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

@@ -1,7 +1,162 @@
-[gd_scene format=3 uid="uid://2g6jtn4oljhl"]
+[gd_scene load_steps=12 format=3 uid="uid://2g6jtn4oljhl"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://cetnefv8miixi" path="res://src/menus/home_menu.gd" id="1_5hbdx"]
+[ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="1_uimqf"]
+[ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="2_5hbdx"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="3_2be3m"]
+[ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="4_q5boe"]
+[ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="5_ckhof"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5boe"]
+texture = ExtResource("1_uimqf")
+modulate_color = Color(0.384407, 0.375826, 0.330917, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uimqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uimqf"]
+bg_color = Color(0.228353, 2.42158e-07, 0.00743742, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hbdx"]
+bg_color = Color(0.165976, 2.88785e-07, 0.0040952, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnnxi"]
+bg_color = Color(0.274488, 0, 0.0106818, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[node name="Home menu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hbdx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_q5boe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -63.0
+offset_right = 124.5
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_2be3m")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uimqf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uimqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5hbdx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xnnxi")
+text = "Play"
+
+[node name="setting" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_2be3m")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uimqf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uimqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5hbdx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xnnxi")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_2be3m")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uimqf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uimqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5hbdx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xnnxi")
+text = "Log out"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -226.0
+offset_right = 217.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 25
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 50
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_5hbdx")
+theme_override_font_sizes/font_size = 135
+text = "Heng Daily"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q5boe")
+bus = &"Sfx"
+
+[node name="Hover-card" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ckhof")
+bus = &"Sfx"
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/setting" to="." method="_on_setting_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/setting" to="." method="_on_setting_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

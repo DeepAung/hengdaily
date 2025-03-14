@@ -4,48 +4,21 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_6j817")
 
-[node name="Status" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -104.5
-offset_right = 162.0
-offset_bottom = -81.5
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -75.5
-offset_right = 162.0
-offset_bottom = 75.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 450.0
+offset_top = 200.0
+offset_right = 774.0
+offset_bottom = 351.0
+
+[node name="Status" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
 
 [node name="Email" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
