@@ -1,6 +1,9 @@
 extends Control
 
 func _ready():
+	if Firebase.Auth.check_auth_file():
+		var auth = Firebase.Auth.auth
+		_on_FirebaseAuth_login_succeeded(auth)
 	Firebase.Auth.login_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.signup_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
@@ -11,6 +14,7 @@ func _on_log_in_pressed():
 	var email = $VBoxContainer/Email.text
 	var password = $VBoxContainer/Password.text
 	Firebase.Auth.login_with_email_and_password(email, password)
+	
 
 func _on_register_pressed():
 	var email = $VBoxContainer/Email.text
@@ -22,6 +26,9 @@ func _on_register_pressed():
 		Firebase.Auth.signup_with_email_and_password(email, password)
 
 func _on_FirebaseAuth_login_succeeded(auth):
+	var succeeded = Firebase.Auth.save_auth(auth)
+	if not succeeded: # TODO: handle error
+		print("not succeeded")
 	$VBoxContainer/Status.text =  "login successfully"
 	print(auth)
 	
