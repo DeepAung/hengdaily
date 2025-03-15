@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://n0i6hl0xswsc"]
 
-[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/sys/AuthManager.gd" id="1_6j817"]
+[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_u8v5j"]
 
-[node name="Control" type="Control"]
+[node name="SignInMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -15,7 +15,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6j817")
+script = ExtResource("1_u8v5j")
 
 [node name="Status" type="Label" parent="."]
 layout_mode = 1

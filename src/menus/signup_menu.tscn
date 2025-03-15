@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3k5xwq38qepi"]
 
-[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/sys/AuthManager.gd" id="1_puoug"]
+[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_puoug"]
 
 [node name="SignUpMenu" type="Control"]
 layout_mode = 3
@@ -74,4 +74,4 @@ layout_mode = 2
 text = "Sign in"
 
 [connection signal="pressed" from="VBoxContainer/SignUpBtn" to="." method="_on_register_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkToSignIn" to="." method="_on_link_to_sign_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkToSignIn" to="." method="_on_link_to_sign_in_pressed"]
