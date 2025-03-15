@@ -2,8 +2,15 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	print("PLAYED")
 	$Click.play()
+	
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 0.01
+	timer.one_shot = true
+	timer.start()
+	await timer.timeout
+	get_tree().change_scene_to_file("res://src/menus/game_scene.tscn")
 	
 func _on_play_mouse_entered() -> void:
 	$"Hover-card".play()
