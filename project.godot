@@ -14,6 +14,7 @@ config/name="HengDaily"
 run/main_scene="uid://n0i6hl0xswsc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+config/description.web=""
 
 [autoload]
 
@@ -27,7 +28,18 @@ project/assembly_name="HengDaily"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg")
+
+[firebase]
+
+apiKey="---------ASK SOMEONE-------------"
+authDomain="hengdaily-a9f7d.firebaseapp.com"
+databaseURL=""
+projectId="hengdaily-a9f7d"
+storageBucket="hengdaily-a9f7d.firebasestorage.app"
+messagingSenderId="264166013164"
+appId="1:264166013164:web:8aac58b3d273c240e90dc9"
+measurementId="G-B89Z5LPN7G"
 
 [rendering]
 
