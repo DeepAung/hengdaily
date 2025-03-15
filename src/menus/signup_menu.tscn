@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c3k5xwq38qepi"]
 
-[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/sys/AuthManager.gd" id="1_puoug"]
+[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_puoug"]
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="2_7s0bh"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="3_t0h3t"]
 [ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="4_la3oc"]
@@ -228,4 +228,4 @@ stream = ExtResource("8_w72hk")
 
 [connection signal="mouse_entered" from="VBoxContainer/SignUpBtn" to="." method="_on_sign_up_btn_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/SignUpBtn" to="." method="_on_register_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkToSignIn" to="." method="_on_link_to_sign_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkToSignIn" to="." method="_on_link_to_sign_in_pressed"]

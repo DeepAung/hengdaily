@@ -38,7 +38,7 @@ func _on_quit_pressed() -> void:
 	timer.start()
 	await timer.timeout
 	Firebase.Auth.logout()
-	get_tree().change_scene_to_file("res://src/menus/authentication_menu.tscn")
+	get_tree().change_scene_to_file("res://src/menus/signin_menu.tscn")
 	#get_tree().quit()
 	
 func _on_quit_mouse_entered() -> void:

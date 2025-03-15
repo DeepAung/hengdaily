@@ -4,6 +4,8 @@ func _ready():
 	if Firebase.Auth.check_auth_file():
 		var auth = Firebase.Auth.auth
 		_on_FirebaseAuth_login_succeeded(auth)
+		return
+	
 	Firebase.Auth.login_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.signup_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
@@ -31,7 +33,7 @@ func _on_FirebaseAuth_login_succeeded(auth):
 	if not succeeded: # TODO: handle error
 		print("not succeeded")
 	$Status.text =  "login successfully"
-	#print(auth)
+	
 	get_tree().change_scene_to_file("res://src/menus/home_menu.tscn")
 	
 func on_login_failed(error_code, message):
@@ -47,13 +49,11 @@ func on_signup_failed(error_code, message):
 func _on_link_to_sign_up_pressed() -> void:
 	get_tree().change_scene_to_file("res://src/menus/signup_menu.tscn")
 
-func _on_link_to_sign_pressed() -> void:
-	get_tree().change_scene_to_file("res://src/menus/authentication_menu.tscn")
-
+func _on_link_to_sign_in_pressed() -> void:
+	get_tree().change_scene_to_file("res://src/menus/signin_menu.tscn")
 
 func _on_sign_in_btn_mouse_entered() -> void:
 	$"Hover-card".play()
-
 
 func _on_sign_up_btn_mouse_entered() -> void:
 	$"Hover-card".play()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://n0i6hl0xswsc"]
 
-[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/sys/AuthManager.gd" id="1_6j817"]
+[ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_u8v5j"]
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="2_mjbfg"]
 [ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Poppins/Poppins-ExtraBold.ttf" id="3_f4g18"]
 [ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="4_mx8gd"]
@@ -79,14 +79,14 @@ expand_margin_bottom = 10.0
 shadow_size = 2
 shadow_offset = Vector2(7, 5)
 
-[node name="Control" type="Control"]
+[node name="SignInMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6j817")
+script = ExtResource("1_u8v5j")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
