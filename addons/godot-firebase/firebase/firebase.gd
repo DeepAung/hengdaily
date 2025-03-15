@@ -103,25 +103,37 @@ func _check_emulating() -> void:
 
 func _load_config() -> void:
 	if not (_config.apiKey != "" and _config.authDomain != ""):
-		var env = ConfigFile.new()
-		var err = env.load("res://addons/godot-firebase/.env")
-		if err == OK:
-			for key in _config.keys():
-				var config_value = _config[key]
-				if key == "emulators" and config_value.has("ports"):
-					for port in config_value["ports"].keys():
-						config_value["ports"][port] = env.get_value(_EMULATORS_PORTS, port, "")
-				if key == "auth_providers":
-					for provider in config_value.keys():
-						config_value[provider] = env.get_value(_AUTH_PROVIDERS, provider, "")
-				else:
-					var value : String = env.get_value(_ENVIRONMENT_VARIABLES, key, "")
-					if value == "":
-						_print("The value for `%s` is not configured. If you are not planning to use it, ignore this message." % key)
+		if (Firebase._config.apiKey == "" or Firebase._config.authDomain == ""): 
+			if (Utilities.is_web()):
+				#! These similar processes also run inside _ready() in firebase.gd
+				Firebase._config["apiKey"] = ProjectSettings.get_setting("firebase/apiKey");
+				Firebase._config["authDomain"] = ProjectSettings.get_setting("firebase/authDomain");
+				Firebase._config["projectId"] = ProjectSettings.get_setting("firebase/projectId");
+				Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
+				Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
+				Firebase._config["messagingSenderId"] = ProjectSettings.get_setting("firebase/messagingSenderId");
+				Firebase._config["appId"] = ProjectSettings.get_setting("firebase/appId");
+				Firebase._config["measurementId"] = ProjectSettings.get_setting("firebase/measurementId");
+		else :
+			var env = ConfigFile.new()
+			var err = env.load("res://addons/godot-firebase/.env")
+			if err == OK:
+				for key in _config.keys():
+					var config_value = _config[key]
+					if key == "emulators" and config_value.has("ports"):
+						for port in config_value["ports"].keys():
+							config_value["ports"][port] = env.get_value(_EMULATORS_PORTS, port, "")
+					if key == "auth_providers":
+						for provider in config_value.keys():
+							config_value[provider] = env.get_value(_AUTH_PROVIDERS, provider, "")
 					else:
-						_config[key] = value
-		else:
-			_printerr("Unable to read .env file at path 'res://addons/godot-firebase/.env'")
+						var value : String = env.get_value(_ENVIRONMENT_VARIABLES, key, "")
+						if value == "":
+							_print("The value for `%s` is not configured. If you are not planning to use it, ignore this message." % key)
+						else:
+							_config[key] = value
+			else:
+				_printerr("Unable to read .env file at path 'res://addons/godot-firebase/.env'")
 
 	_setup_modules()
 
