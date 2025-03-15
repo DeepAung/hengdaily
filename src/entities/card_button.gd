@@ -1,9 +1,15 @@
 extends Button
+class_name CardButton
 
-var card: Card
+var card: Card #Remove?
+var completed: bool = false
 
-func _init(card: Card) -> void:
-	self.card = card
+
+func _init() -> void:
+	hide()
+
+
+func _ready() -> void:
 	$FrameTexture.texture = card.frame_texture
 	$InnerTexture.texture = card.inner_texture
 	
@@ -13,11 +19,19 @@ func _init(card: Card) -> void:
 	
 	$Label.text = card.name
 	$CardDescription.set_description(card.description)
+	show()
+
+
+func mark_as_completed() -> void:
+	completed = true
+	$CompletedOverlay.show()
 
 
 func _on_mouse_entered() -> void:
-	$CardDescription.visible = true
+	if not completed:
+		$CardDescription.visible = true
 
 
 func _on_mouse_exited() -> void:
-	$CardDescription.visible = false
+	if not completed:
+		$CardDescription.visible = false

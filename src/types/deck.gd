@@ -7,6 +7,9 @@ var events: Array[Event]
 
 func _init(cards: Array[Card], events: Array[Event]) -> void:
 	self.cards = cards
+	self.card_is_completed = []
+	for i in range(len(self.cards)):
+		self.card_is_completed.append(false)
 	self.events = events
 
 func pick_cards(n: int) -> Array[Card]:
