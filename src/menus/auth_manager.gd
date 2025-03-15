@@ -1,11 +1,24 @@
 extends Control
 
+var isWeb : bool = Utilities.is_web();
+ # มี 2 ที่ : auth_manager.gd กับใน home_menu.gd
+# usage : _ready(), _on_FirebaseAuth_login_succeeded
+
 func _ready():
-	if Firebase.Auth.check_auth_file():
-		var auth = Firebase.Auth.auth
-		_on_FirebaseAuth_login_succeeded(auth)
-		return
-	
+	if (isWeb) : # load auth infomation from localStorage
+		var json = JSON.new()
+		var authToken = JavaScriptBridge.eval("localStorage.getItem('auth_token');");
+		if (authToken != null) :
+			var json_parse_result = json.parse(authToken)
+			if json_parse_result == OK:
+				var encrypted_file_data = json.data
+				Firebase.Auth.manual_token_refresh(encrypted_file_data)
+	else : # load auth infomation from .env file
+		if Firebase.Auth.check_auth_file(): 
+			var auth = Firebase.Auth.auth
+			_on_FirebaseAuth_login_succeeded(auth)
+			return
+# TODO : idk : if these 4 line deal with saving/loading .evn file ?????
 	Firebase.Auth.login_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.signup_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
@@ -28,12 +41,16 @@ func _on_register_pressed():
 	else:
 		Firebase.Auth.signup_with_email_and_password(email, password)
 
+
 func _on_FirebaseAuth_login_succeeded(auth):
-	var succeeded = Firebase.Auth.save_auth(auth)
-	if not succeeded: # TODO: handle error
-		print("not succeeded")
+	if (isWeb):
+		var authToken : String = JSON.stringify(auth);
+		JavaScriptBridge.eval("localStorage.setItem('auth_token', '" + authToken + "');");
+	else :
+		var succeeded = Firebase.Auth.save_auth(auth)
+		if not succeeded: # TODO: handle error
+			print("not succeeded")
 	$Status.text =  "login successfully"
-	
 	get_tree().change_scene_to_file("res://src/menus/home_menu.tscn")
 	
 func on_login_failed(error_code, message):

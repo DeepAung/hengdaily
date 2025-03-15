@@ -1,5 +1,9 @@
 extends Control
 
+var isWeb : bool = Utilities.is_web();
+# มี 2 ที่ : auth_manager.gd กับใน home_menu.gd
+# usage : _on_quit_pressed()
+
 
 func _on_play_pressed() -> void:
 	$Click.play()
@@ -37,7 +41,12 @@ func _on_quit_pressed() -> void:
 	timer.one_shot = true
 	timer.start()
 	await timer.timeout
-	Firebase.Auth.logout()
+	if (isWeb):
+		JavaScriptBridge.eval("localStorage.removeItem('auth_token');")
+		print("User signed out.")
+	else :
+		Firebase.Auth.logout()
+	
 	get_tree().change_scene_to_file("res://src/menus/signin_menu.tscn")
 	#get_tree().quit()
 	
