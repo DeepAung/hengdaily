@@ -9,19 +9,44 @@ enum Icon {
 	BAD_LOVE,
 	BAD_STUDY,
 	BAD_HEALTH,
-	BAD_MONEY
+	BAD_MONEY,
+	QUESTIONMARK
 }
 
 enum Frame {
-	PINK,
-	YELLOW,
-	GREEN,
-	BLUE
+	LOVE,
+	MONEY,
+	HEALTH,
+	STUDY,
+	SPECIAL,
+	NORMAL
 } 
 
 # TODO: add appropriate textures
 enum Inner {
-	TEST
+	TEST,
+	MOODENG,
+	DIVINEZENITH,
+	LuckyChicken,
+	DoubleSidedLuck,
+	Meditation,
+	BuddhaBeliever,
+	TheFool,
+	MakeAMerit,
+	TheEarlyBird,
+	FullMoonNight,
+	StudyI,
+	StudyII,
+	StudyIII,
+	KingsAsc,
+	HealthyDiet,
+	HealthyBodyHealthyMind,
+	DevilsCurse,
+	DevilsWhisper,
+	BackToBasic,
+	MajorArcana,
+	FallenAngel
+	
 }
 
 const icon_textures = {
@@ -32,19 +57,26 @@ const icon_textures = {
 	Icon.BAD_LOVE: preload("res://assets/icon/bad_love.png"),
 	Icon.BAD_STUDY: preload("res://assets/icon/bad_study.png"),
 	Icon.BAD_HEALTH: preload("res://assets/icon/bad_health.png"),
-	Icon.BAD_MONEY: preload("res://assets/icon/bad_money.png")
+	Icon.BAD_MONEY: preload("res://assets/icon/bad_money.png"),
+	Icon.QUESTIONMARK: preload("res://assets/icon/questionmark.png")
 }
 
 const frame_textures = {
-	Frame.PINK: preload("res://assets/frame/pink.png"),
-	Frame.YELLOW: preload("res://assets/frame/yellow.png"),
-	Frame.GREEN: preload("res://assets/frame/green.png"),
-	Frame.BLUE: preload("res://assets/frame/blue.png")
+	Frame.LOVE: preload("res://assets/frame/pink.png"),
+	Frame.MONEY: preload("res://assets/frame/yellow.png"),
+	Frame.HEALTH: preload("res://assets/frame/green.png"),
+	Frame.STUDY: preload("res://assets/frame/blue.png"),
+	Frame.SPECIAL: preload("res://assets/frame/special.png"),
+	Frame.NORMAL: preload("res://assets/frame/normal.png")
 }
 
 # TODO: add appropriate textures
 const inner_textures = {
-	Inner.TEST: preload("res://assets/icon.svg")
+	Inner.TEST: preload("res://assets/icon.svg"),
+	Inner.MOODENG: preload("res://assets/inner/MooDeng.png"),
+	Inner.DIVINEZENITH: preload("res://assets/inner/DivineZenith.png"),
+	Inner.LuckyChicken: preload("res://assets/inner/LuckyChicken.png"),
+		
 }
 
 

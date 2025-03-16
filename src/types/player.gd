@@ -139,15 +139,23 @@ func add_health(amount: int):
 func add_love_percent(amount: int, percent: int):
 	if randf() * 100 < percent:
 		self.luck_love += amount
+		return true
+	return false
 
 func add_money_percent(amount: int, percent: int):
 	if randf() * 100 < percent:
 		self.luck_money += amount
-
+		return true
+	return false
+	
 func add_study_percent(amount: int, percent: int):
 	if randf() * 100 < percent:
 		self.luck_study += amount
-
+		return true
+	return false
+	
 func add_health_percent(amount: int, percent: int):
 	if randf() * 100 < percent:
 		self.luck_health += amount
+		return true
+	return false
