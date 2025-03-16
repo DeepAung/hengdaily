@@ -1,10 +1,10 @@
 class_name Player
 extends Node
 
-var id: int
+var id: String
 var display_name: String
 var age: int
-var gpa: int
+var gpa: float
 var birthday_unix: int
 var luck_love: int
 var luck_study: int
@@ -15,7 +15,7 @@ var completed_cards: Array[bool]
 var event_history: Array[Event]
 var last_login_unix: int
 
-func _init(id: int, display_name: String, age: int, gpa: int, birthday_unix: int) -> void:
+func _init(id: String, display_name: String, age: int, gpa: float, birthday_unix: int) -> void:
 	self.id = id
 	self.display_name = display_name
 	self.age = age
@@ -31,6 +31,44 @@ func _init(id: int, display_name: String, age: int, gpa: int, birthday_unix: int
 	self.current_cards = []
 	self.event_history = []
 	self.last_login_unix = -1
+
+
+static func player_to_dictionary(player: Player) -> Dictionary:
+	return {
+		id = player.id,
+		display_name = player.display_name,
+		age = player.age,
+		gpa = player.gpa,
+		birthday_unix = player.birthday_unix,
+		luck_love = player.luck_love,
+		luck_study = player.luck_study,
+		luck_health = player.luck_health,
+		luck_money = player.luck_money,
+		current_cards = player.current_cards,
+		completed_cards = player.completed_cards,
+		event_history = player.event_history,
+		last_login_unix = player.last_login_unix,
+	}
+
+# TODO: parse array
+static func document_to_player(doc: FirestoreDocument) -> Player:
+	var document = doc.document
+	var player: Player = Player.new("", "", 0, 0, 0) # TODO: is there a better way?
+	player.id = str(document.id.stringValue)
+	player.display_name = str(document.display_name.stringValue)
+	player.age = int(document.age.integerValue)
+	player.gpa = float(document.gpa.doubleValue)
+	player.birthday_unix = int(document.birthday_unix.integerValue)
+	player.luck_love = int(document.luck_love.integerValue)
+	player.luck_study = int(document.luck_study.integerValue)
+	player.luck_health = int(document.luck_health.integerValue)
+	player.luck_money = int(document.luck_money.integerValue)
+	#player.current_cards = Array(document.current_cards.arrayValue.values)
+	#player.completed_cards = Array(document.completed_cards.arrayValue.values)
+	#player.event_history = Array(document.event_history.arrayValue.values)
+	player.last_login_unix = int(document.last_login_unix.integerValue)
+	
+	return player
 
 
 func get_latest_event() -> Event:
