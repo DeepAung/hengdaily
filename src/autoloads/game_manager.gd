@@ -7,10 +7,10 @@ var deck: Deck
 var auth: Dictionary
 
 func _init() -> void:
-	var cards = CardUtils.cards.values()
+	randomize()
+	var cards: Array[Card] = CardUtils.cards.values()
 	var events: Array[Event] = []
 	self.deck = Deck.new(cards, events)
-	randomize()
 
 # this function should be called when the game scene is starting
 # fetch player from firebase and select appropriate deck
