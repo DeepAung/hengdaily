@@ -4,6 +4,8 @@ extends Node
 var player: Player
 var deck: Deck
 
+var auth: Dictionary
+
 func _init() -> void:
 	randomize()
 
@@ -12,3 +14,6 @@ func _init() -> void:
 func setup(player: Player, deck: Deck) -> void:
 	self.player = player
 	self.deck = deck
+
+func get_player_id() -> String:
+	return auth["localid"]

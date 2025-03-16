@@ -3,16 +3,16 @@ extends Node
 const CardButton = preload("res://src/entities/card_button.tscn")
 
 func _init() -> void:
-	# Dummy data to check if the game is working
-	var player = Player.new(1, "Haminic", 19, 4, 1)
-	player.add_love(50)
-	player.add_study(-50)
-	player.add_money(1000)
-	player.add_health(30)
+	var player_id = GameManager.get_player_id()
+	var doc: FirestoreDocument = await Firebase.Firestore.collection("players").get_doc(player_id)
+	print("player_id: ", player_id)
+	print("document: ", doc)
+	var player = Player.document_to_player(doc)
 	var cards = CardUtils.cards.values()
 	var events: Array[Event] = []
 	var deck = Deck.new(cards, events)
 	GameManager.setup(player, deck)
+
 
 func _ready() -> void:
 	
