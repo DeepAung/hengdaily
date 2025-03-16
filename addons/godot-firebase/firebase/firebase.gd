@@ -103,17 +103,16 @@ func _check_emulating() -> void:
 
 func _load_config() -> void:
 	if not (_config.apiKey != "" and _config.authDomain != ""):
-		if (Firebase._config.apiKey == "" or Firebase._config.authDomain == ""): 
-			if (Utilities.is_web()):
-				#! These similar processes also run inside _ready() in firebase.gd
-				Firebase._config["apiKey"] = ProjectSettings.get_setting("firebase/apiKey");
-				Firebase._config["authDomain"] = ProjectSettings.get_setting("firebase/authDomain");
-				Firebase._config["projectId"] = ProjectSettings.get_setting("firebase/projectId");
-				Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
-				Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
-				Firebase._config["messagingSenderId"] = ProjectSettings.get_setting("firebase/messagingSenderId");
-				Firebase._config["appId"] = ProjectSettings.get_setting("firebase/appId");
-				Firebase._config["measurementId"] = ProjectSettings.get_setting("firebase/measurementId");
+		if (Utilities.is_web()):
+			#! These similar processes also run inside _ready() in firebase.gd
+			Firebase._config["apiKey"] = ProjectSettings.get_setting("firebase/apiKey");
+			Firebase._config["authDomain"] = ProjectSettings.get_setting("firebase/authDomain");
+			Firebase._config["projectId"] = ProjectSettings.get_setting("firebase/projectId");
+			Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
+			Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
+			Firebase._config["messagingSenderId"] = ProjectSettings.get_setting("firebase/messagingSenderId");
+			Firebase._config["appId"] = ProjectSettings.get_setting("firebase/appId");
+			Firebase._config["measurementId"] = ProjectSettings.get_setting("firebase/measurementId");
 		else :
 			var env = ConfigFile.new()
 			var err = env.load("res://addons/godot-firebase/.env")
