@@ -46,7 +46,6 @@ enum Inner {
 	BackToBasic,
 	MajorArcana,
 	FallenAngel
-	
 }
 
 const icon_textures = {
@@ -76,7 +75,26 @@ const inner_textures = {
 	Inner.MOODENG: preload("res://assets/inner/MooDeng.png"),
 	Inner.DIVINEZENITH: preload("res://assets/inner/DivineZenith.png"),
 	Inner.LuckyChicken: preload("res://assets/inner/LuckyChicken.png"),
-		
+	
+	# TODO: add inner images
+	Inner.DoubleSidedLuck: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.Meditation: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.BuddhaBeliever: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.TheFool: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.MakeAMerit: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.TheEarlyBird: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.FullMoonNight: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.StudyI: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.StudyII: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.StudyIII: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.KingsAsc: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.HealthyDiet: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.HealthyBodyHealthyMind: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.DevilsCurse: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.DevilsWhisper: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.BackToBasic: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.MajorArcana: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.FallenAngel: preload("res://assets/inner/LuckyChicken.png"),
 }
 
 

@@ -35,20 +35,16 @@ func _init(id: String, display_name: String, age: int, gpa: float, birthday_unix
 
 
 func calculate(x: int, y: int) -> int:
-	var num = 0;
+	var seed = 0;
 	for i in range(len(self.display_name)):
-		num += self.display_name.unicode_at(i)
-	num += self.age * x - y
-	num /= self.gpa
-	num = int(num)
-	num += self.birthday_unix
-	var mod = num % 100 + 1
-	var mod2 = num % mod + 1
-	var new_num = num % mod2
-	if num % 2 == 0:
-		new_num *= -1
-
-	return new_num
+		seed += self.display_name.unicode_at(i)
+	seed += self.age * x - y
+	seed /= self.gpa + 1.0
+	seed = int(seed)
+	seed += abs(self.birthday_unix) % 269
+	var result = rand_from_seed(seed)[0] % 200 - 100
+	print(result)
+	return result
 
 
 static func player_to_dictionary(player: Player) -> Dictionary:
