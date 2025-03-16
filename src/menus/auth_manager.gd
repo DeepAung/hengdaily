@@ -71,8 +71,15 @@ func _on_FirebaseAuth_login_succeeded(auth):
 	GameManager.auth = auth
 	if mode == "signup":
 		get_tree().change_scene_to_file("res://src/menus/question_menu.tscn")
-	else:
-		get_tree().change_scene_to_file("res://src/menus/home_menu.tscn")
+	else: # mode == "signin"
+		# check if player exist. if not, goto question_menu to complete the registeration
+		var result = await Firebase.Firestore.collection("players").get_doc(GameManager.get_player_id())
+		print("result: ", result)
+		if result == null:
+			get_tree().change_scene_to_file("res://src/menus/question_menu.tscn")
+		else:
+			get_tree().change_scene_to_file("res://src/menus/home_menu.tscn")
+
 	
 func on_login_failed(error_code, message):
 	print("error code: " + str(error_code))
