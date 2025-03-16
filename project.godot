@@ -12,7 +12,7 @@ config_version=5
 
 config/name="HengDaily"
 run/main_scene="uid://2g6jtn4oljhl"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
