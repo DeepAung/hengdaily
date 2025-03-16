@@ -34,6 +34,16 @@ func _init(id: String, display_name: String, age: int, gpa: float, birthday_unix
 
 
 static func player_to_dictionary(player: Player) -> Dictionary:
+	var current_cards_index: Array[int] = []
+	for card in player.current_cards:
+		var index = GameManager.deck.cards.find(card)
+		current_cards_index.append(index)
+	
+	var event_index_history: Array[int] = []
+	for event in player.event_history:
+		var index = GameManager.deck.events.find(event)
+		event_index_history.append(index)
+	
 	return {
 		id = player.id,
 		display_name = player.display_name,
@@ -44,13 +54,13 @@ static func player_to_dictionary(player: Player) -> Dictionary:
 		luck_study = player.luck_study,
 		luck_health = player.luck_health,
 		luck_money = player.luck_money,
-		current_cards = player.current_cards,
+		current_cards_index = current_cards_index,
 		completed_cards = player.completed_cards,
-		event_history = player.event_history,
+		event_index_history = event_index_history,
 		last_login_unix = player.last_login_unix,
 	}
 
-# TODO: parse array
+
 static func document_to_player(doc: FirestoreDocument) -> Player:
 	var document = doc.document
 	var player: Player = Player.new("", "", 0, 0, 0) # TODO: is there a better way?
@@ -63,10 +73,28 @@ static func document_to_player(doc: FirestoreDocument) -> Player:
 	player.luck_study = int(document.luck_study.integerValue)
 	player.luck_health = int(document.luck_health.integerValue)
 	player.luck_money = int(document.luck_money.integerValue)
-	#player.current_cards = Array(document.current_cards.arrayValue.values)
-	#player.completed_cards = Array(document.completed_cards.arrayValue.values)
-	#player.event_history = Array(document.event_history.arrayValue.values)
 	player.last_login_unix = int(document.last_login_unix.integerValue)
+	
+	var iter = []
+	if document.current_cards_index.arrayValue.has("values"):
+		iter = document.current_cards_index.arrayValue.values
+	for obj in iter:
+		var index = int(obj.integerValue)
+		player.current_cards.append(GameManager.deck.cards[index])
+	
+	iter = []
+	if document.completed_cards.arrayValue.has("values"):
+		iter = document.completed_cards.arrayValue.values
+	for obj in iter:
+		var boolean = bool(obj.booleanValue)
+		player.completed_cards.append(boolean)
+	
+	iter = []
+	if document.event_index_history.arrayValue.has("values"):
+		iter = document.event_index_history.arrayValue.values
+	for obj in iter:
+		var index = int(obj.integerValue)
+		player.event_history.append(GameManager.deck.events[index])
 	
 	return player
 

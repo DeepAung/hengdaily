@@ -5,13 +5,9 @@ const CardButton = preload("res://src/entities/card_button.tscn")
 func _init() -> void:
 	var player_id = GameManager.get_player_id()
 	var doc: FirestoreDocument = await Firebase.Firestore.collection("players").get_doc(player_id)
-	print("player_id: ", player_id)
-	print("document: ", doc)
 	var player = Player.document_to_player(doc)
-	var cards = CardUtils.cards.values()
-	var events: Array[Event] = []
-	var deck = Deck.new(cards, events)
-	GameManager.setup(player, deck)
+	
+	GameManager.setup(player)
 
 
 func _ready() -> void:
