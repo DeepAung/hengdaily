@@ -23,14 +23,32 @@ func _init(id: String, display_name: String, age: int, gpa: float, birthday_unix
 	self.birthday_unix = birthday_unix
 	
 	# TODO: use input from above to calculate luck below (from -100 to +100)
-	self.luck_love = 0
-	self.luck_study = 0
-	self.luck_health = 0
-	self.luck_money = 0
+	self.luck_love = self.calculate(2, 23)
+	self.luck_study = self.calculate(4, 37)
+	self.luck_health = self.calculate(1, 99)
+	self.luck_money = self.calculate(3, 555)
+	
 	
 	self.current_cards = []
 	self.event_history = []
 	self.last_login_unix = -1
+
+
+func calculate(x: int, y: int) -> int:
+	var num = 0;
+	for i in range(len(self.display_name)):
+		num += self.display_name.unicode_at(i)
+	num += self.age * x - y
+	num /= self.gpa
+	num = int(num)
+	num += self.birthday_unix
+	var mod = num % 100 + 1
+	var mod2 = num % mod + 1
+	var new_num = num % mod2
+	if num % 2 == 0:
+		new_num *= -1
+
+	return new_num
 
 
 static func player_to_dictionary(player: Player) -> Dictionary:
