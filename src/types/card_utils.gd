@@ -4,10 +4,9 @@ class_name CardUtils
 
 #TODO: Add cards
 enum {
-	TEST_CARD,
-	MOODENG,
-	DIVINEZENITH,
 	LuckyChicken,
+	MooDeng,
+	DivineZenith,
 	DoubleSidedLuck,
 	Meditation,
 	BuddhaBeliever,
@@ -29,25 +28,8 @@ enum {
 	
 }
 
-#Might be a better way
-const enum_size = 1
-
 #TODO: Add cards
 static var cards: Dictionary[int, Card] = {
-	TEST_CARD: Card.new(
-		"Test", 
-		"The best card",
-		SpriteUtils.Inner.TEST,
-		SpriteUtils.Frame.LOVE,
-		[SpriteUtils.Icon.LOVE, SpriteUtils.Icon.BAD_STUDY],
-		   func(player: Player) -> void:
-			player.add_love(50) #(amount to add)
-			player.add_health(-20)
-			player.add_money_percent(90, 20) #(amount, chance in % that the amount gets added)
-			player.add_study_percent(-20, 80), 
-		#NOTE: Don't forget to add trailing  ^
-		#      comma after functions
-	),
 	LuckyChicken:Card.new(
 		"Lucky Chicken",
 		"กินเหนียวไก่ที่คณะวิศวะตอนเที่ยง",
@@ -59,7 +41,7 @@ static var cards: Dictionary[int, Card] = {
 			if not player.add_health_percent(-10,25):
 				player.add_health_percent(-10,75),
 	),
-	MOODENG:Card.new(
+	MooDeng:Card.new(
 		"MOODENG",
 		"กินลูกชิ้นหมู 20 บาท",
 		SpriteUtils.Inner.MOODENG,
@@ -70,7 +52,7 @@ static var cards: Dictionary[int, Card] = {
 			player.add_health(-50),
 		
 	),
-	DIVINEZENITH:Card.new(
+	DivineZenith:Card.new(
 		"DEVINE ZENITH",
 		"ออกกำลังกาย 2 ชั่วโมง อ่านหนังสือ 5 ชั่วโมง นอนครบ 8 ชั่วโมง ภายในวันนี้ ",
 		SpriteUtils.Inner.DIVINEZENITH,
