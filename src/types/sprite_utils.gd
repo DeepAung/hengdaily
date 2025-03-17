@@ -104,6 +104,15 @@ const inner_textures = {
 	Inner.BackToBasic: preload("res://assets/inner/LuckyChicken.png"),
 	Inner.MajorArcana: preload("res://assets/inner/LuckyChicken.png"),
 	Inner.FallenAngel: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.MakeAFriend: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.Strangers: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.TakeSomeRisks: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.BeKind: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.StayHydrated: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.JoggingI: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.JoggingII: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.TakeSomeRest: preload("res://assets/inner/LuckyChicken.png"),
+	Inner.JustRelax: preload("res://assets/inner/LuckyChicken.png"),
 }
 
 
