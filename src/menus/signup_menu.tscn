@@ -236,9 +236,11 @@ text = "Sign in"
 
 [node name="Hover-card" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_la3oc")
+bus = &"Sfx"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_w72hk")
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="VBoxContainer/SignUpBtn" to="." method="_on_sign_up_btn_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/SignUpBtn" to="." method="_on_register_pressed"]

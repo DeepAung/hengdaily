@@ -224,9 +224,11 @@ text = "Next"
 
 [node name="Hover-card" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_d84ts")
+bus = &"Sfx"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hvoxy")
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]

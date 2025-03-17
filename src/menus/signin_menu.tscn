@@ -212,9 +212,11 @@ horizontal_alignment = 1
 
 [node name="Hover-card" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_mx8gd")
+bus = &"Sfx"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_x0hco")
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/SignInBtn" to="." method="_on_sign_in_btn_mouse_entered"]
