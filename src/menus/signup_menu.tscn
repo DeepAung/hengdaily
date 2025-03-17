@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3k5xwq38qepi"]
+[gd_scene load_steps=19 format=3 uid="uid://c3k5xwq38qepi"]
 
 [ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_puoug"]
+[ext_resource type="Theme" uid="uid://d1we2b40pcdj3" path="res://heng_theme.tres" id="1_w72hk"]
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="2_7s0bh"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="3_t0h3t"]
 [ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="4_la3oc"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="5_1dqb0"]
 [ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Poppins/Poppins-ExtraBold.ttf" id="5_w72hk"]
 [ext_resource type="FontFile" uid="uid://1i7yum64wdh4" path="res://assets/fonts/Poppins/Poppins-BoldItalic.ttf" id="6_1dqb0"]
 [ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="7_la3oc"]
@@ -24,7 +26,9 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+expand_margin_left = 10.0
 expand_margin_top = 5.0
+expand_margin_right = 10.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dqb0"]
@@ -38,7 +42,9 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+expand_margin_left = 10.0
 expand_margin_top = 5.0
+expand_margin_right = 10.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wt3o8"]
@@ -52,7 +58,9 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+expand_margin_left = 10.0
 expand_margin_top = 5.0
+expand_margin_right = 10.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7s0bh"]
@@ -64,7 +72,9 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 2
 shadow_offset = Vector2(7, 5)
@@ -76,7 +86,9 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 2
 shadow_offset = Vector2(7, 5)
@@ -88,7 +100,9 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 2
 shadow_offset = Vector2(7, 5)
@@ -100,6 +114,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_w72hk")
 script = ExtResource("1_puoug")
 
 [node name="Panel" type="Panel" parent="."]
@@ -110,6 +125,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_wt3o8")
+
+[node name="Status" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 319.0
+offset_top = 189.0
+offset_right = 834.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_1dqb0")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
@@ -131,23 +158,7 @@ theme_override_fonts/font = ExtResource("3_t0h3t")
 theme_override_font_sizes/font_size = 125
 text = "Sign Up"
 horizontal_alignment = 1
-
-[node name="Status" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.421007
-anchor_top = 0.496142
-anchor_right = 0.578125
-anchor_bottom = 0.503858
-offset_left = -162.0
-offset_top = -123.5
-offset_right = 162.0
-offset_bottom = -100.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+autowrap_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -167,27 +178,30 @@ theme_override_constants/separation = 35
 [node name="Email" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568627, 0.6, 0.572549, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_la3oc")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_w72hk")
-placeholder_text = "  Email"
+placeholder_text = "Email"
 
 [node name="Password" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568627, 0.6, 0.572549, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_la3oc")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_1dqb0")
-placeholder_text = "  Password"
+placeholder_text = "Password"
 secret = true
 
 [node name="ConfirmPassword" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568627, 0.6, 0.572549, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_la3oc")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_wt3o8")
-placeholder_text = "  Confirm Password"
+placeholder_text = "Confirm Password"
 secret = true
 
 [node name="SignUpBtn" type="Button" parent="VBoxContainer"]

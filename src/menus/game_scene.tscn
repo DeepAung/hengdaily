@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://gebkjvtnkb21"]
 
 [ext_resource type="Script" uid="uid://b4ha3jqw0n3et" path="res://src/menus/game_scene.gd" id="1_bpp04"]
-[ext_resource type="Texture2D" uid="uid://c1wa8bku3gk2a" path="res://assets/frame/blue.png" id="2_ik070"]
+[ext_resource type="Texture2D" uid="uid://crw860g6pjknx" path="res://assets/frame/blue.png" id="2_ik070"]
 [ext_resource type="PackedScene" uid="uid://rirti5s2anxq" path="res://src/menus/luck_chart.tscn" id="3_j12tk"]
 
 [node name="GameScene" type="Node"]

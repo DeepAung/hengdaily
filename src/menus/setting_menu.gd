@@ -38,3 +38,7 @@ func _on_back_pressed() -> void:
 
 func _on_back_mouse_entered() -> void:
 	$"Hover-card".play()
+	
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		GameManager.return_to_previous_scene()
