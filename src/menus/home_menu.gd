@@ -52,3 +52,7 @@ func _on_quit_pressed() -> void:
 	
 func _on_quit_mouse_entered() -> void:
 	$"Hover-card".play()
+
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		GameManager.go_to_settings()

@@ -89,7 +89,7 @@ func on_login_failed(error_code, message):
 func on_signup_failed(error_code, message):
 	print("error code: " + str(error_code))
 	print("message: " + str(message))
-	$Status.text = str(message)
+	$Panel/Status.text = str(message)
 
 func _on_link_to_sign_up_pressed() -> void:
 	get_tree().change_scene_to_file("res://src/menus/signup_menu.tscn")
@@ -102,3 +102,7 @@ func _on_sign_in_btn_mouse_entered() -> void:
 
 func _on_sign_up_btn_mouse_entered() -> void:
 	$"Hover-card".play()
+	
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		GameManager.go_to_settings()

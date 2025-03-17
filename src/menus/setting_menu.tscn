@@ -132,9 +132,11 @@ text = "Settings"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_0vt8x")
+bus = &"Sfx"
 
 [node name="Hover-card" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_on0dy")
+bus = &"Sfx"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1

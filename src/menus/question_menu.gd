@@ -10,6 +10,13 @@ const questions = [
 
 var answers = [
 	"",
+	"",
+	"",
+	""
+]
+
+var answers_placeholder = [
+	"your name",
 	0,
 	0.0,
 	0
@@ -35,6 +42,7 @@ func _on_next_pressed() -> void:
 		get_tree().change_scene_to_file("res://src/menus/game_scene.tscn")
 	else:
 		render()
+	$Click.play()
 
 func _on_previous_pressed() -> void:
 	$Status.text = ""
@@ -42,10 +50,12 @@ func _on_previous_pressed() -> void:
 	if current_index < 0:
 		current_index = 0
 	render()
+	$Click.play()
 
 func render() -> void:
 	$Question.text = questions[current_index]
 	%Answer.text = str(answers[current_index])
+	%Answer.placeholder_text = str(answers_placeholder[current_index])
 	
 	if current_index == len(questions) - 1:
 		%Next.text = "Confirm"
@@ -135,3 +145,14 @@ func create_player():
 	var player = Player.new(player_id, answers[0], answers[1], answers[2], answers[3])
 	var player_dict = Player.player_to_dictionary(player)
 	await Firebase.Firestore.collection("players").add(player_id, player_dict)
+	
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		GameManager.go_to_settings()
+
+
+func _on_previous_mouse_entered() -> void:
+	$"Hover-card".play()
+
+func _on_next_mouse_entered() -> void:
+	$"Hover-card".play()

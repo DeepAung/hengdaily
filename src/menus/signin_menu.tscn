@@ -24,7 +24,9 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4g18"]
@@ -38,7 +40,9 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njti4"]
@@ -50,7 +54,9 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 2
 shadow_offset = Vector2(7, 5)
@@ -62,7 +68,9 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 2
 shadow_offset = Vector2(7, 5)
@@ -74,7 +82,9 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_left = 10.0
 expand_margin_top = 10.0
+expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_size = 2
 shadow_offset = Vector2(7, 5)
@@ -132,18 +142,20 @@ theme_override_constants/separation = 40
 [node name="Email" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568585, 0.599322, 0.571292, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_mx8gd")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_mjbfg")
-placeholder_text = "  Email"
+placeholder_text = "Email"
 
 [node name="Password" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568627, 0.6, 0.572549, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_mx8gd")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_f4g18")
-placeholder_text = "  Password"
+placeholder_text = "Password"
 secret = true
 
 [node name="SignInBtn" type="Button" parent="VBoxContainer"]
@@ -200,9 +212,11 @@ horizontal_alignment = 1
 
 [node name="Hover-card" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_mx8gd")
+bus = &"Sfx"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_x0hco")
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/SignInBtn" to="." method="_on_sign_in_btn_mouse_entered"]
