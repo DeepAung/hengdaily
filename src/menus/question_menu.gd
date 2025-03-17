@@ -10,16 +10,23 @@ const questions = [
 
 var answers = [
 	"",
+	"",
+	"",
+	""
+]
+
+var answers_placeholder = [
+	"your name",
 	0,
 	0.0,
 	0
 ]
 
 func _ready() -> void:
-	if not GameManager.has_player_id():
-		$Status.text = "error: user is not signed in. redirecting to signin_menu"
-		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://src/menus/signin_menu.tscn")
+	#if not GameManager.has_player_id():
+		#$Status.text = "error: user is not signed in. redirecting to signin_menu"
+		#await get_tree().create_timer(1).timeout
+		#get_tree().change_scene_to_file("res://src/menus/signin_menu.tscn")
 	
 	render()
 
@@ -46,6 +53,7 @@ func _on_previous_pressed() -> void:
 func render() -> void:
 	$Question.text = questions[current_index]
 	%Answer.text = str(answers[current_index])
+	%Answer.placeholder_text = str(answers_placeholder[current_index])
 	
 	if current_index == len(questions) - 1:
 		%Next.text = "Confirm"
@@ -135,3 +143,7 @@ func create_player():
 	var player = Player.new(player_id, answers[0], answers[1], answers[2], answers[3])
 	var player_dict = Player.player_to_dictionary(player)
 	await Firebase.Firestore.collection("players").add(player_id, player_dict)
+	
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		GameManager.go_to_settings()

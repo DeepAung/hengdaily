@@ -1,16 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://bml4q5qb355uv"]
+[gd_scene load_steps=14 format=3 uid="uid://kk1oe10q3rbe"]
 
-[ext_resource type="Theme" uid="uid://d1we2b40pcdj3" path="res://heng_theme.tres" id="1_dgpfb"]
-[ext_resource type="Script" uid="uid://lwyf2p6nmxy0" path="res://src/menus/question_menu.gd" id="2_txomd"]
-[ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="3_nikut"]
+[ext_resource type="Script" uid="uid://lwyf2p6nmxy0" path="res://src/menus/question_menu.gd" id="1_3lgub"]
+[ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="1_h10h7"]
+[ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="3_2bt5p"]
+[ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Poppins/Poppins-ExtraBold.ttf" id="4_3b20i"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="4_wqk3d"]
-[ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Poppins/Poppins-ExtraBold.ttf" id="5_v0cwj"]
-[ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="6_3xebw"]
-[ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="7_62n68"]
-[ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="8_i57vy"]
+[ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="5_d84ts"]
+[ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="6_hvoxy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s57lp"]
-texture = ExtResource("3_nikut")
+texture = ExtResource("1_h10h7")
 modulate_color = Color(0.34902, 0.34902, 0.34902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qkn2"]
@@ -80,8 +79,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_dgpfb")
-script = ExtResource("2_txomd")
+script = ExtResource("1_3lgub")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -97,10 +95,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -206.0
-offset_top = 86.0
-offset_right = 207.0
-offset_bottom = 206.0
+offset_left = -314.5
+offset_top = 96.0
+offset_right = 326.5
+offset_bottom = 232.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 50
@@ -109,23 +107,6 @@ theme_override_font_sizes/font_size = 100
 text = "Question"
 horizontal_alignment = 1
 
-<<<<<<< HEAD:question_menu.tscn
-[node name="Status" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -254.0
-offset_top = 270.0
-offset_right = 255.0
-offset_bottom = 298.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("5_v0cwj")
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-
-||||||| b01f94d:src/menus/question_menu.tscn
-=======
 [node name="Status" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -134,16 +115,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -162.0
-offset_top = -83.0
+offset_top = -56.0
 offset_right = 162.0
-offset_bottom = -55.0
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_3b20i")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
->>>>>>> eee2d6404192619955cb9afb380945cac4cff4d8:src/menus/question_menu.tscn
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -151,20 +131,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -254.5
-offset_top = -4.5
-offset_right = 254.5
-offset_bottom = 274.5
+offset_left = -251.0
+offset_top = -14.5
+offset_right = 251.0
+offset_bottom = 264.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 40
 
 [node name="Answer" type="LineEdit" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568585, 0.599322, 0.571292, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_3xebw")
+theme_override_fonts/font = ExtResource("3_2bt5p")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qkn2")
 placeholder_text = "Answer"
@@ -178,7 +158,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568585, 0.599322, 0.571292, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_3xebw")
+theme_override_fonts/font = ExtResource("3_2bt5p")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qkn2")
 placeholder_text = "Day"
@@ -186,13 +166,12 @@ placeholder_text = "Day"
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/DateInputContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_dgpfb")
 
 [node name="Month" type="LineEdit" parent="VBoxContainer/DateInputContainer"]
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568585, 0.599322, 0.571292, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_3xebw")
+theme_override_fonts/font = ExtResource("3_2bt5p")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qkn2")
 placeholder_text = "Month"
@@ -205,7 +184,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_colors/font_placeholder_color = Color(0.568585, 0.599322, 0.571292, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_3xebw")
+theme_override_fonts/font = ExtResource("3_2bt5p")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7qkn2")
 placeholder_text = "Year"
@@ -218,7 +197,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("5_v0cwj")
+theme_override_fonts/font = ExtResource("4_3b20i")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l1nce")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ic1x6")
@@ -235,7 +214,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("5_v0cwj")
+theme_override_fonts/font = ExtResource("4_3b20i")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l1nce")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ic1x6")
@@ -244,10 +223,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kvdy2")
 text = "Next"
 
 [node name="Hover-card" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_62n68")
+stream = ExtResource("5_d84ts")
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_i57vy")
+stream = ExtResource("6_hvoxy")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]
