@@ -228,5 +228,7 @@ stream = ExtResource("5_d84ts")
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hvoxy")
 
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_next_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]

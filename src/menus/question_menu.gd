@@ -23,10 +23,10 @@ var answers_placeholder = [
 ]
 
 func _ready() -> void:
-	#if not GameManager.has_player_id():
-		#$Status.text = "error: user is not signed in. redirecting to signin_menu"
-		#await get_tree().create_timer(1).timeout
-		#get_tree().change_scene_to_file("res://src/menus/signin_menu.tscn")
+	if not GameManager.has_player_id():
+		$Status.text = "error: user is not signed in. redirecting to signin_menu"
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_file("res://src/menus/signin_menu.tscn")
 	
 	render()
 
@@ -42,6 +42,7 @@ func _on_next_pressed() -> void:
 		get_tree().change_scene_to_file("res://src/menus/game_scene.tscn")
 	else:
 		render()
+	$Click.play()
 
 func _on_previous_pressed() -> void:
 	$Status.text = ""
@@ -49,6 +50,7 @@ func _on_previous_pressed() -> void:
 	if current_index < 0:
 		current_index = 0
 	render()
+	$Click.play()
 
 func render() -> void:
 	$Question.text = questions[current_index]
@@ -147,3 +149,10 @@ func create_player():
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		GameManager.go_to_settings()
+
+
+func _on_previous_mouse_entered() -> void:
+	$"Hover-card".play()
+
+func _on_next_mouse_entered() -> void:
+	$"Hover-card".play()
