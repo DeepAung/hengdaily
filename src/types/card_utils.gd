@@ -24,8 +24,16 @@ enum {
 	DevilsWhisper,
 	BackToBasic,
 	MajorArcana,
-	FallenAngel
-	
+	FallenAngel,
+	MakeAFriend,
+	Strangers,
+	TakeSomeRisks,
+	BeKind,
+	StayHydrated,
+	JoggingI,
+	JoggingII,
+	TakeSomeRest,
+	JustRelax
 }
 
 #TODO: Add cards
@@ -242,19 +250,108 @@ static var cards: Dictionary[int, Card] = {
 			if not player.add_money_percent(50,10):
 				player.add_money_percent(-50,10)
 			if not player.add_study_percent(50,10):
-				player.add_study_percent(-50,10)
-				,
-				),
+				player.add_study_percent(-50,10),
+	),
 	FallenAngel: Card.new(
 		"Fallen Angel",
 		"คุณได้ขอโทษกับคนที่คุณทำอะไรไม่ดีด้วยใจจริงในเดือนนี้",
 		SpriteUtils.Inner.FallenAngel,
 		SpriteUtils.Frame.LOVE,
-		[SpriteUtils.Icon.LOVE,SpriteUtils.Icon.BAD_LOVE],
+		[SpriteUtils.Icon.LOVE, SpriteUtils.Icon.BAD_LOVE],
 		func(player:Player)  -> void:
 			if not player.add_love_percent(50,50):
 				player.add_love_percent(-50,50),
-	)
+	),
+	MakeAFriend: Card.new(
+		"Make a Friend",
+		"หาเพื่อนใหม่ 1 คนในวันนี้",
+		SpriteUtils.Inner.MakeAFriend,
+		SpriteUtils.Frame.MONEY,
+		[SpriteUtils.Icon.MONEY, SpriteUtils.Icon.STUDY, SpriteUtils.Icon.LOVE],
+		func(player:Player)  -> void:
+			player.add_money(10)
+			player.add_study(5)
+			player.add_love(5),
+	),
+	Strangers: Card.new(
+		"Strangers",
+		"ชวนคนแปลกหน้าคุย 2 คนในวันนี้",
+		SpriteUtils.Inner.Strangers,
+		SpriteUtils.Frame.MONEY,
+		[SpriteUtils.Icon.LOVE, SpriteUtils.Icon.MONEY],
+		func(player: Player) -> void:
+			player.add_love(5)
+			player.add_money(15),
+	),
+	TakeSomeRisks: Card.new(
+		"Take some risks",
+		"ลงทุนคริบโต",
+		SpriteUtils.Inner.TakeSomeRisks,
+		SpriteUtils.Frame.MONEY,
+		[SpriteUtils.Icon.MONEY],
+		func(player: Player) -> void:
+			if not player.add_money_percent(50, 50):
+				player.add_money(-50),
+	),
+	BeKind: Card.new(
+		"Be Kind",
+		"ช่วยเหลือผู้อื่น 1 ครั้ง",
+		SpriteUtils.Inner.BeKind,
+		SpriteUtils.Frame.LOVE,
+		[SpriteUtils.Icon.LOVE, SpriteUtils.Icon.MONEY],
+		func(player: Player) -> void:
+			player.add_love(15)
+			player.add_money(10),
+	),
+	StayHydrated: Card.new(
+		"Stay Hydrated",
+		"ดื่มน้ำครบ 8 แก้ว",
+		SpriteUtils.Inner.StayHydrated,
+		SpriteUtils.Frame.HEALTH,
+		[SpriteUtils.Icon.HEALTH, SpriteUtils.Icon.STUDY],
+		func(player: Player) -> void:
+			player.add_health(5)
+			player.add_study(5),
+	),
+	JoggingI: Card.new(
+		"Jogging I",
+		"วิ่งยามเช้าเป็นเวลา 15 นาที",
+		SpriteUtils.Inner.JoggingI,
+		SpriteUtils.Frame.HEALTH,
+		[SpriteUtils.Icon.HEALTH],
+		func(player: Player) -> void:
+			player.add_health(15),
+	),
+	JoggingII: Card.new(
+		"Jogging II",
+		"วิ่งยามเช้าเป็นเวลา 30 นาที",
+		SpriteUtils.Inner.JoggingII,
+		SpriteUtils.Frame.HEALTH,
+		[SpriteUtils.Icon.HEALTH],
+		func(player: Player) -> void:
+			player.add_health(25),
+	),
+	TakeSomeRest: Card.new(
+		"Take Some Rest",
+		"นอนครบ 8 ชั่วโมง",
+		SpriteUtils.Inner.TakeSomeRest,
+		SpriteUtils.Frame.HEALTH,
+		[SpriteUtils.Icon.HEALTH, SpriteUtils.Icon.STUDY],
+		func(player: Player) -> void:
+			player.add_health(20),
+	),
+	JustRelax: Card.new(
+		"Just Relax",
+		"ผ่อนคลาย อย่าเครียด ทำในสิ่งที่คุณชื่นชอบ",
+		SpriteUtils.Inner.JustRelax,
+		SpriteUtils.Frame.HEALTH,
+		[SpriteUtils.Icon.HEALTH, SpriteUtils.Icon.STUDY, SpriteUtils.Icon.LOVE, SpriteUtils.Icon.MONEY],
+		func(player: Player) -> void:
+			player.add_health(5)
+			player.add_study(5)
+			player.add_love(5)
+			player.add_money(5),
+	),
 }
 
 

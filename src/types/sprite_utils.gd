@@ -45,7 +45,16 @@ enum Inner {
 	DevilsWhisper,
 	BackToBasic,
 	MajorArcana,
-	FallenAngel
+	FallenAngel,
+	MakeAFriend,
+	Strangers,
+	TakeSomeRisks,
+	BeKind,
+	StayHydrated,
+	JoggingI,
+	JoggingII,
+	TakeSomeRest,
+	JustRelax
 }
 
 const icon_textures = {
