@@ -19,3 +19,6 @@ func setup(player: Player) -> void:
 
 func get_player_id() -> String:
 	return auth["localid"]
+
+func has_player_id() -> bool:
+	return auth.has("localid")
