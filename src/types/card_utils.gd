@@ -38,7 +38,7 @@ enum {
 
 #TODO: Add cards
 static var cards: Dictionary[int, Card] = {
-	LuckyChicken:Card.new(
+	LuckyChicken: Card.new(
 		"Lucky Chicken",
 		"กินเหนียวไก่ที่คณะวิศวะตอนเที่ยง",
 		SpriteUtils.Inner.LuckyChicken,

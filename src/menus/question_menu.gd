@@ -10,13 +10,6 @@ const questions = [
 
 var answers = [
 	"",
-	"",
-	"",
-	""
-]
-
-var answers_placeholder = [
-	"Enter your name",
 	0,
 	0.0,
 	0
@@ -53,7 +46,6 @@ func _on_previous_pressed() -> void:
 func render() -> void:
 	$Question.text = questions[current_index]
 	%Answer.text = str(answers[current_index])
-	%Answer.placeholder_text = str(answers_placeholder[current_index])
 	
 	if current_index == len(questions) - 1:
 		%Next.text = "Confirm"
@@ -143,7 +135,3 @@ func create_player():
 	var player = Player.new(player_id, answers[0], answers[1], answers[2], answers[3])
 	var player_dict = Player.player_to_dictionary(player)
 	await Firebase.Firestore.collection("players").add(player_id, player_dict)
-
-func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		GameManager.go_to_settings()
