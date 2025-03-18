@@ -13,7 +13,7 @@ func _ready() -> void:
 	$FrameTexture.texture = card.frame_texture
 	$InnerTexture.texture = card.inner_texture
 	
-	for icon in card.icon_list:
+	for icon in card.icon_texture_list:
 #		put the icon somewhere
 		pass
 	

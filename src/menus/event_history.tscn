@@ -21,22 +21,24 @@ offset_bottom = 31.0
 grow_horizontal = 0
 text = "Event Histories"
 
-[node name="EventHistoryList" type="VBoxContainer" parent="."]
-visible = false
+[node name="EventHistoryList" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 185.0
+offset_left = -116.5
+offset_right = 123.5
+offset_bottom = 400.0
 grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventHistoryList"]
+layout_mode = 2
 
 [node name="DummyEvent" type="VBoxContainer" parent="."]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
+offset_right = 178.0
+offset_bottom = 50.0
 
 [node name="Name" type="Label" parent="DummyEvent"]
 layout_mode = 2

@@ -3,11 +3,7 @@
 [ext_resource type="Script" uid="uid://bovqt23xhvwo8" path="res://src/menus/popup.gd" id="1_o8x0d"]
 
 [node name="Popup" type="VBoxContainer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -89.0
-offset_right = 89.0
+offset_right = 178.0
 offset_bottom = 85.0
 grow_horizontal = 2
 script = ExtResource("1_o8x0d")
