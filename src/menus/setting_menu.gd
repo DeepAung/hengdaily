@@ -34,7 +34,7 @@ func _on_back_pressed() -> void:
 	timer.one_shot = true
 	timer.start()
 	await timer.timeout
-	get_tree().change_scene_to_file("res://src/menus/home_menu.tscn")
+	GameManager.return_to_previous_scene()
 
 func _on_back_mouse_entered() -> void:
 	$"Hover-card".play()
