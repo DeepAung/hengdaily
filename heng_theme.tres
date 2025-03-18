@@ -1,9 +1,61 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d1we2b40pcdj3"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d1we2b40pcdj3"]
 
+[ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Poppins/Poppins-ExtraBold.ttf" id="1_om7hf"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="1_tndre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njti4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx8gd"]
+bg_color = Color(0.208041, 3.95575e-07, 0.00685114, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfd8a"]
+bg_color = Color(0.293791, 0, 0.013485, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0hco"]
+bg_color = Color(0.158607, 3.41428e-07, 0.00415704, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 2
+shadow_offset = Vector2(7, 5)
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 15
+Button/fonts/font = ExtResource("1_om7hf")
+Button/styles/focus = SubResource("StyleBoxEmpty_njti4")
+Button/styles/hover = SubResource("StyleBoxFlat_mx8gd")
+Button/styles/normal = SubResource("StyleBoxFlat_vfd8a")
+Button/styles/pressed = SubResource("StyleBoxFlat_x0hco")
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 15
 Label/font_sizes/font_size = 80
