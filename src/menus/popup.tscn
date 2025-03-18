@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpkmeq5lsejqw"]
+
+[ext_resource type="Script" uid="uid://bovqt23xhvwo8" path="res://src/menus/popup.gd" id="1_o8x0d"]
+
+[node name="Popup" type="VBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_right = 89.0
+offset_bottom = 85.0
+grow_horizontal = 2
+script = ExtResource("1_o8x0d")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+text = "Event Text Here"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 2
+text = "Event Description Here"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
