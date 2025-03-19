@@ -4,10 +4,10 @@
 [ext_resource type="Theme" uid="uid://d1we2b40pcdj3" path="res://heng_theme.tres" id="1_w72hk"]
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="2_7s0bh"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="3_t0h3t"]
-[ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Kanit/Kanit-ExtraBoldItalic.ttf" id="4_la3oc"]
-[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Kanit/Kanit-Bold.ttf" id="5_1dqb0"]
-[ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Kanit/Kanit-ExtraBold.ttf" id="5_w72hk"]
-[ext_resource type="FontFile" uid="uid://1i7yum64wdh4" path="res://assets/fonts/Kanit/Kanit-BoldItalic.ttf" id="6_1dqb0"]
+[ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="4_la3oc"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="5_1dqb0"]
+[ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Poppins/Poppins-ExtraBold.ttf" id="5_w72hk"]
+[ext_resource type="FontFile" uid="uid://1i7yum64wdh4" path="res://assets/fonts/Poppins/Poppins-BoldItalic.ttf" id="6_1dqb0"]
 [ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="7_la3oc"]
 [ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="8_w72hk"]
 
@@ -241,6 +241,46 @@ bus = &"Sfx"
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_w72hk")
 bus = &"Sfx"
+
+[node name="LoadingPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="LoadingPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LoadingPanel/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1dqb0")
+theme_override_font_sizes/font_size = 48
+text = "Loading..."
+
+[node name="Status" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -83.0
+offset_right = 162.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_w72hk")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="VBoxContainer/SignUpBtn" to="." method="_on_sign_up_btn_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/SignUpBtn" to="." method="_on_register_pressed"]
