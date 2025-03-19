@@ -4,7 +4,6 @@ var isWeb : bool = Utilities.is_web();
 # มี 2 ที่ : auth_manager.gd กับใน home_menu.gd
 # usage : _on_quit_pressed()
 
-
 func _on_play_pressed() -> void:
 	$Click.play()
 	
@@ -14,7 +13,8 @@ func _on_play_pressed() -> void:
 	timer.one_shot = true
 	timer.start()
 	await timer.timeout
-	get_tree().change_scene_to_file("res://src/menus/game_scene.tscn")
+	
+	GameManager.go_to_settings()
 	
 func _on_play_mouse_entered() -> void:
 	$"Hover-card".play()

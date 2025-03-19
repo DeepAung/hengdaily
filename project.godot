@@ -23,6 +23,10 @@ BackGroundMusicPlayer="*res://src/autoloads/background_music_player.tscn"
 GameManager="*res://src/autoloads/game_manager.gd"
 SignalBus="*res://src/autoloads/signal_bus.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="HengDaily"
@@ -41,6 +45,10 @@ storageBucket="hengdaily-a9f7d.firebasestorage.app"
 messagingSenderId="264166013164"
 appId="1:264166013164:web:8aac58b3d273c240e90dc9"
 measurementId="G-B89Z5LPN7G"
+
+[gui]
+
+theme/custom_font="uid://xxso74255fx8"
 
 [rendering]
 

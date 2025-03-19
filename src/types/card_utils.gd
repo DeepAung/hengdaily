@@ -40,7 +40,7 @@ enum {
 static var cards: Dictionary[int, Card] = {
 	LuckyChicken: Card.new(
 		"Lucky Chicken",
-		"กินเหนียวไก่ที่คณะวิศวะตอนเที่ยง",
+		"กินเหนียวไก่ที่คณะวิศวะตอนเที่ยง\n25%\n- study += 20\n- health -= 10\n75%\nhealth -= 10",
 		SpriteUtils.Inner.LuckyChicken,
 		SpriteUtils.Frame.STUDY,
 		[SpriteUtils.Icon.STUDY,SpriteUtils.Icon.BAD_HEALTH],

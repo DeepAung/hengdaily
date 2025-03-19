@@ -22,7 +22,6 @@ func _init() -> void:
 	var last_login = Time.get_datetime_dict_from_unix_time(GameManager.player.last_login_unix)
 	var today =  Time.get_datetime_dict_from_system()
 	var is_new_day: bool = GameManager.greater_date(today, last_login)
-	#is_new_day = true;
 	
 	if (is_new_day):
 		# update last_login, event_history, current_cards in FireStore
