@@ -37,7 +37,7 @@ enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg", "res://addon
 
 [firebase]
 
-apiKey="---------ASK SOMEONE-------------"
+apiKey="AIzaSyAQ8cATngqHev3SJvRUK1uOkpn1MONf9q4"
 authDomain="hengdaily-a9f7d.firebaseapp.com"
 databaseURL=""
 projectId="hengdaily-a9f7d"
@@ -45,6 +45,10 @@ storageBucket="hengdaily-a9f7d.firebasestorage.app"
 messagingSenderId="264166013164"
 appId="1:264166013164:web:8aac58b3d273c240e90dc9"
 measurementId="G-B89Z5LPN7G"
+
+[gui]
+
+theme/custom_font="uid://xxso74255fx8"
 
 [rendering]
 
