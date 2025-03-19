@@ -128,3 +128,7 @@ func handle_complete_card(index: int) -> void:
 	update_doc.add_or_update_field("luck_health", player_dict.luck_health)
 	update_doc.add_or_update_field("luck_money", player_dict.luck_money)
 	await Firebase.Firestore.collection("players").update(update_doc)
+
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		GameManager.go_to_settings()

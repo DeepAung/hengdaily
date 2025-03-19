@@ -13,8 +13,7 @@ func _on_play_pressed() -> void:
 	timer.one_shot = true
 	timer.start()
 	await timer.timeout
-	
-	GameManager.go_to_settings()
+	get_tree().change_scene_to_file("res://src/menus/game_scene.tscn")
 	
 func _on_play_mouse_entered() -> void:
 	$"Hover-card".play()
@@ -28,8 +27,8 @@ func _on_setting_pressed() -> void:
 	timer.one_shot = true
 	timer.start()
 	await timer.timeout
-	get_tree().change_scene_to_file("res://src/menus/setting_menu.tscn")
-
+	GameManager.go_to_settings()
+	
 func _on_setting_mouse_entered() -> void:
 	$"Hover-card".play()
 

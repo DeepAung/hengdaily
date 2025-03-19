@@ -13,7 +13,8 @@ config_version=5
 config/name="HengDaily"
 run/main_scene="uid://n0i6hl0xswsc"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://jc5hbfyswqbi"
+config/icon="uid://jc5hbfyswqbi"
 config/description.web=""
 
 [autoload]
@@ -53,3 +54,4 @@ theme/custom_font="uid://xxso74255fx8"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_puoug"]
 [ext_resource type="Theme" uid="uid://d1we2b40pcdj3" path="res://heng_theme.tres" id="1_w72hk"]
-[ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="2_7s0bh"]
+[ext_resource type="Texture2D" uid="uid://br4gab5jslxlw" path="res://assets/frame/HengDaily_Bg.webp" id="3_1dqb0"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="3_t0h3t"]
 [ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="4_la3oc"]
 [ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="5_1dqb0"]
@@ -12,8 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="8_w72hk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wt3o8"]
-texture = ExtResource("2_7s0bh")
-modulate_color = Color(0.347817, 0.347817, 0.347817, 1)
+texture = ExtResource("3_1dqb0")
+modulate_color = Color(0.569836, 0.559608, 0.545655, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w72hk"]
 bg_color = Color(1, 1, 1, 1)

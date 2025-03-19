@@ -80,7 +80,7 @@ const frame_textures = {
 
 # TODO: add appropriate textures
 const inner_textures = {
-	Inner.TEST: preload("res://assets/icon.svg"),
+	#Inner.TEST: preload("res://assets/icon.svg"),
 	Inner.MOODENG: preload("res://assets/inner/MooDeng.png"),
 	Inner.DIVINEZENITH: preload("res://assets/inner/DivineZenith.png"),
 	Inner.LuckyChicken: preload("res://assets/inner/LuckyChicken.png"),

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://gebkjvtnkb21"]
+[gd_scene load_steps=12 format=3 uid="uid://gebkjvtnkb21"]
 
 [ext_resource type="Script" uid="uid://b4ha3jqw0n3et" path="res://src/menus/game_scene.gd" id="1_bpp04"]
 [ext_resource type="Texture2D" uid="uid://dh12pbik5trq6" path="res://assets/frame/special.png" id="2_ksqw1"]
+[ext_resource type="Texture2D" uid="uid://br4gab5jslxlw" path="res://assets/frame/HengDaily_Bg.webp" id="2_mpg61"]
 [ext_resource type="PackedScene" uid="uid://bpkmeq5lsejqw" path="res://src/components/popup.tscn" id="3_5pb3k"]
 [ext_resource type="PackedScene" uid="uid://rirti5s2anxq" path="res://src/components/luck_chart.tscn" id="3_j12tk"]
 [ext_resource type="PackedScene" uid="uid://cq5bpd73x6aat" path="res://src/components/card_button.tscn" id="3_ksqw1"]
@@ -10,15 +11,20 @@
 [ext_resource type="FontFile" uid="uid://crnwg6pu4vlqj" path="res://assets/fonts/Kanit/Kanit-Regular.ttf" id="6_bp6n0"]
 [ext_resource type="Theme" uid="uid://d1we2b40pcdj3" path="res://heng_theme.tres" id="9_fgjkk"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xabk"]
+texture = ExtResource("2_mpg61")
+modulate_color = Color(0.569836, 0.559608, 0.545655, 1)
+
 [node name="GameScene" type="Node"]
 script = ExtResource("1_bpp04")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1xabk")
 
 [node name="DummyCardDeck" type="TextureRect" parent="."]
 offset_left = 17.0
