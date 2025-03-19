@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bpkmeq5lsejqw" path="res://src/components/popup.tscn" id="3_5pb3k"]
 [ext_resource type="PackedScene" uid="uid://rirti5s2anxq" path="res://src/components/luck_chart.tscn" id="3_j12tk"]
 [ext_resource type="PackedScene" uid="uid://cq5bpd73x6aat" path="res://src/components/card_button.tscn" id="3_ksqw1"]
+[ext_resource type="FontFile" uid="uid://xxso74255fx8" path="res://assets/fonts/Kanit/Kanit-Bold.ttf" id="5_1xabk"]
 [ext_resource type="PackedScene" uid="uid://pjl46hio81iw" path="res://src/components/event_history.tscn" id="5_ksqw1"]
-[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="7_86yim"]
-[ext_resource type="FontFile" uid="uid://bxcw6hwt3ua12" path="res://assets/fonts/Poppins/Poppins-Regular.ttf" id="8_fgjkk"]
+[ext_resource type="FontFile" uid="uid://crnwg6pu4vlqj" path="res://assets/fonts/Kanit/Kanit-Regular.ttf" id="6_bp6n0"]
 [ext_resource type="Theme" uid="uid://d1we2b40pcdj3" path="res://heng_theme.tres" id="9_fgjkk"]
 
 [node name="GameScene" type="Node"]
@@ -92,14 +92,14 @@ alignment = 1
 
 [node name="Label" type="Label" parent="CardClickPopup/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("7_86yim")
+theme_override_fonts/font = ExtResource("5_1xabk")
 theme_override_font_sizes/font_size = 40
 text = "Test Text Label "
 horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="CardClickPopup/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("8_fgjkk")
+theme_override_fonts/font = ExtResource("6_bp6n0")
 theme_override_font_sizes/font_size = 24
 text = "Test Description Here
 Test Description Here
@@ -122,7 +122,6 @@ theme = ExtResource("9_fgjkk")
 text = "Close"
 
 [node name="CardHoverPopup" type="ColorRect" parent="."]
-visible = false
 offset_left = 315.0
 offset_top = 356.0
 offset_right = 831.0
@@ -139,14 +138,14 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CardHoverPopup/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("7_86yim")
+theme_override_fonts/font = ExtResource("5_1xabk")
 theme_override_font_sizes/font_size = 14
 text = "Test Text Label "
 horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="CardHoverPopup/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("8_fgjkk")
+theme_override_fonts/font = ExtResource("6_bp6n0")
 theme_override_font_sizes/font_size = 10
 text = "Test Description Here
 Test Description Here
