@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c664g48jb1coo" path="res://src/menus/setting_menu.gd" id="1_a4o22"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="2_a4o22"]
 [ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="4_0vt8x"]
-[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="4_on0dy"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Kanit/Kanit-Bold.ttf" id="4_on0dy"]
 [ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="5_on0dy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ci370"]

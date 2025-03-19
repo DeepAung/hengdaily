@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_u8v5j"]
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="2_mjbfg"]
-[ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Poppins/Poppins-ExtraBold.ttf" id="3_f4g18"]
-[ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf" id="4_mx8gd"]
-[ext_resource type="FontFile" uid="uid://1i7yum64wdh4" path="res://assets/fonts/Poppins/Poppins-BoldItalic.ttf" id="5_x0hco"]
+[ext_resource type="FontFile" uid="uid://1n4u4cnvpriu" path="res://assets/fonts/Kanit/Kanit-ExtraBold.ttf" id="3_f4g18"]
+[ext_resource type="FontFile" uid="uid://c0xk23434xmmm" path="res://assets/fonts/Kanit/Kanit-ExtraBoldItalic.ttf" id="4_mx8gd"]
+[ext_resource type="FontFile" uid="uid://1i7yum64wdh4" path="res://assets/fonts/Kanit/Kanit-BoldItalic.ttf" id="5_x0hco"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="6_ytr6k"]
 [ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="7_mx8gd"]
 [ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="8_x0hco"]
-[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="9_b5w5l"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Kanit/Kanit-Bold.ttf" id="9_b5w5l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2psp5"]
 texture = ExtResource("2_mjbfg")
