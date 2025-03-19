@@ -1,10 +1,9 @@
 extends Control
 class_name LuckBar
 
-var value: float = 0
-const MIN_MAX: float = 2000
+var value: int = 0
+const GROWTH_RATE: float = 0.003
 @export var color: Color = Color.WHITE
-
 
 func _ready() -> void:
 	$PositiveBar.anchor_bottom = 0.5
@@ -30,27 +29,19 @@ func set_color(color: Color) -> void:
 	$NegativeBar.color = color
 
 
-#TODO: Add tween?
 func update_bar() -> void:
 	if value >= 0:
-		$NegativeBar.anchor_bottom = 0.5
-		$NegativeBar.anchor_top = 0.5
-		$PositiveBar.anchor_bottom = 0.5
 		$PositiveBar.anchor_top = 0.5 - convert_to_height(value)
+		$NegativeBar.anchor_bottom = 0.5
 		$NegativeBar/Label.hide()
 		$PositiveBar/Label.text = str(value)
 		$PositiveBar/Label.show()
 	else:
-		$PositiveBar.anchor_top = 0.5
-		$PositiveBar.anchor_bottom = 0.5
-		$NegativeBar.anchor_top = 0.5
 		$NegativeBar.anchor_bottom = 0.5 + convert_to_height(value)
+		$PositiveBar.anchor_top = 0.5
 		$PositiveBar/Label.hide()
 		$NegativeBar/Label.text = str(value)
 		$NegativeBar/Label.show()
 
-
 func convert_to_height(num: float) -> float:
-	var clamped_num = min(MIN_MAX, abs(num))
-	return 1 - exp(-1/MIN_MAX * clamped_num)
-	
+	return (1 - exp(-GROWTH_RATE * abs(num)))/2
