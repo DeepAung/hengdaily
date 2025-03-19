@@ -1,0 +1,152 @@
+[gd_scene load_steps=19 format=3 uid="uid://cq5bpd73x6aat"]
+
+[ext_resource type="Script" uid="uid://djgtiv38yjyl1" path="res://src/components/card_button.gd" id="1_gr8h2"]
+[ext_resource type="Texture2D" uid="uid://dh12pbik5trq6" path="res://assets/frame/special.png" id="2_f8jww"]
+[ext_resource type="Texture2D" uid="uid://485bu8jjt342" path="res://assets/frame/pink.png" id="2_fqc05"]
+[ext_resource type="Texture2D" uid="uid://dkf0hayf7ha8m" path="res://assets/frame/normal.png" id="2_vptao"]
+[ext_resource type="Texture2D" uid="uid://dpim2eutqillk" path="res://assets/inner/MooDeng.png" id="3_f35h0"]
+[ext_resource type="Texture2D" uid="uid://0dvojyh868bv" path="res://assets/icon/questionmark.png" id="5_f8jww"]
+[ext_resource type="Texture2D" uid="uid://d1gr7jmdhhw0" path="res://assets/inner/DevilWhisper.png" id="7_f35h0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kls6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6a10v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f35h0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xh4n4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfkjs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60dsn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1qde"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2rys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toclj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qt4vt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufo3x"]
+
+[node name="CardButton" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -125.0
+offset_right = 85.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(85, 125)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kls6d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6a10v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f35h0")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xh4n4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_tfkjs")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_60dsn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o1qde")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_f2rys")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_toclj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qt4vt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ufo3x")
+script = ExtResource("1_gr8h2")
+frame_texture = ExtResource("2_fqc05")
+inner_texture = ExtResource("3_f35h0")
+icon_texture_list = Array[Texture2D]([ExtResource("5_f8jww"), ExtResource("5_f8jww")])
+completed_overlay = ExtResource("2_f8jww")
+
+[node name="FrameTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -850.0
+offset_top = -1250.0
+offset_right = 850.0
+offset_bottom = 1250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(850, 1250)
+texture = ExtResource("2_vptao")
+
+[node name="InnerTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -754.0
+offset_top = -1150.0
+offset_right = 846.0
+offset_bottom = 1150.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(750, 1150)
+texture = ExtResource("7_f35h0")
+
+[node name="IconList" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_top = 10.0
+offset_right = 1678.0
+offset_bottom = 1260.0
+grow_horizontal = 0
+scale = Vector2(0.02, 0.02)
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Icon1" type="TextureRect" parent="IconList"]
+layout_mode = 2
+texture = ExtResource("5_f8jww")
+
+[node name="Icon2" type="TextureRect" parent="IconList"]
+layout_mode = 2
+texture = ExtResource("5_f8jww")
+
+[node name="CompletedOverlay" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -850.0
+offset_top = -1250.0
+offset_right = 850.0
+offset_bottom = 1250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(850, 1250)
+texture = ExtResource("2_vptao")
+
+[node name="HoverOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.407843)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

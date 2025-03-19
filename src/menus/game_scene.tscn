@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://gebkjvtnkb21"]
+[gd_scene load_steps=10 format=3 uid="uid://gebkjvtnkb21"]
 
 [ext_resource type="Script" uid="uid://b4ha3jqw0n3et" path="res://src/menus/game_scene.gd" id="1_bpp04"]
-[ext_resource type="Texture2D" uid="uid://crw860g6pjknx" path="res://assets/frame/blue.png" id="2_ik070"]
-[ext_resource type="PackedScene" uid="uid://bpkmeq5lsejqw" path="res://src/menus/popup.tscn" id="3_5pb3k"]
-[ext_resource type="PackedScene" uid="uid://rirti5s2anxq" path="res://src/menus/luck_chart.tscn" id="3_j12tk"]
-[ext_resource type="PackedScene" uid="uid://pjl46hio81iw" path="res://src/menus/event_history.tscn" id="5_ksqw1"]
+[ext_resource type="Texture2D" uid="uid://dh12pbik5trq6" path="res://assets/frame/special.png" id="2_ksqw1"]
+[ext_resource type="PackedScene" uid="uid://bpkmeq5lsejqw" path="res://src/components/popup.tscn" id="3_5pb3k"]
+[ext_resource type="PackedScene" uid="uid://rirti5s2anxq" path="res://src/components/luck_chart.tscn" id="3_j12tk"]
+[ext_resource type="PackedScene" uid="uid://cq5bpd73x6aat" path="res://src/components/card_button.tscn" id="3_ksqw1"]
+[ext_resource type="PackedScene" uid="uid://pjl46hio81iw" path="res://src/components/event_history.tscn" id="5_ksqw1"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="7_86yim"]
+[ext_resource type="FontFile" uid="uid://bxcw6hwt3ua12" path="res://assets/fonts/Poppins/Poppins-Regular.ttf" id="8_fgjkk"]
+[ext_resource type="Theme" uid="uid://d1we2b40pcdj3" path="res://heng_theme.tres" id="9_fgjkk"]
 
 [node name="GameScene" type="Node"]
 script = ExtResource("1_bpp04")
@@ -16,35 +20,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CardDeck" type="TextureRect" parent="."]
-offset_left = 58.0
-offset_top = 54.0
-offset_right = 188.0
-offset_bottom = 249.0
-texture = ExtResource("2_ik070")
+[node name="DummyCardDeck" type="TextureRect" parent="."]
+offset_left = 17.0
+offset_top = 88.0
+offset_right = 1717.0
+offset_bottom = 2588.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ksqw1")
 
-[node name="FortuneTeller" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
+[node name="Cards" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(700, 300)
+offset_left = 225.0
+offset_top = 63.0
+offset_right = 925.0
+offset_bottom = 363.0
 
-[node name="Cards" type="HBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="HBoxContainer" parent="Cards"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CardButton1" parent="Cards/VBoxContainer" instance=ExtResource("3_ksqw1")]
+visible = false
+custom_minimum_size = Vector2(170, 250)
+layout_mode = 2
+
+[node name="CardButton2" parent="Cards/VBoxContainer" instance=ExtResource("3_ksqw1")]
+visible = false
+custom_minimum_size = Vector2(170, 250)
+layout_mode = 2
+
+[node name="CardButton3" parent="Cards/VBoxContainer" instance=ExtResource("3_ksqw1")]
+visible = false
+custom_minimum_size = Vector2(170, 250)
+layout_mode = 2
 
 [node name="LuckChart" parent="." instance=ExtResource("3_j12tk")]
 anchors_preset = 7
@@ -59,7 +69,102 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="EventHistory" parent="." instance=ExtResource("5_ksqw1")]
+[node name="CardClickPopup" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.462745)
+
+[node name="CenterContainer" type="CenterContainer" parent="CardClickPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardClickPopup/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CardClickPopup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_86yim")
+theme_override_font_sizes/font_size = 40
+text = "Test Text Label "
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CardClickPopup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_fgjkk")
+theme_override_font_sizes/font_size = 24
+text = "Test Description Here
+Test Description Here
+Test Description Here"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CardClickPopup/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Confirm" type="Button" parent="CardClickPopup/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("9_fgjkk")
+text = "Confirm"
+
+[node name="Close" type="Button" parent="CardClickPopup/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("9_fgjkk")
+text = "Close"
+
+[node name="CardHoverPopup" type="ColorRect" parent="."]
+visible = false
+offset_left = 315.0
+offset_top = 356.0
+offset_right = 831.0
+offset_bottom = 436.0
+color = Color(0.641934, 0.641934, 0.641934, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardHoverPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CardHoverPopup/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_86yim")
+theme_override_font_sizes/font_size = 14
+text = "Test Text Label "
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CardHoverPopup/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_fgjkk")
+theme_override_font_sizes/font_size = 10
+text = "Test Description Here
+Test Description Here
+Test Description Here"
+horizontal_alignment = 1
 
 [node name="DailyEventPopup" parent="." instance=ExtResource("3_5pb3k")]
 visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 25.0
+offset_right = 150.0
+offset_bottom = 175.0
+grow_horizontal = 2
+
+[node name="EventHistory" parent="." instance=ExtResource("5_ksqw1")]
+
+[connection signal="pressed" from="CardClickPopup/CenterContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="CardClickPopup/CenterContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_popup_pressed"]

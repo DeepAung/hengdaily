@@ -43,7 +43,6 @@ func calculate(x: int, y: int) -> int:
 	seed = int(seed)
 	seed += abs(self.birthday_unix) % 269
 	var result = rand_from_seed(seed)[0] % 200 - 100
-	print(result)
 	return result
 
 

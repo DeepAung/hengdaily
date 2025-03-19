@@ -21,6 +21,7 @@ config/description.web=""
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 BackGroundMusicPlayer="*res://src/autoloads/background_music_player.tscn"
 GameManager="*res://src/autoloads/game_manager.gd"
+SignalBus="*res://src/autoloads/signal_bus.gd"
 
 [dotnet]
 
