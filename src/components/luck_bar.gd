@@ -2,6 +2,7 @@ extends Control
 class_name LuckBar
 
 var value: int = 0
+@export var label: String = ""
 const GROWTH_RATE: float = 0.003
 @export var color: Color = Color.WHITE
 
@@ -33,15 +34,13 @@ func update_bar() -> void:
 	if value >= 0:
 		$PositiveBar.anchor_top = 0.5 - convert_to_height(value)
 		$NegativeBar.anchor_bottom = 0.5
-		$NegativeBar/Label.hide()
 		$PositiveBar/Label.text = str(value)
-		$PositiveBar/Label.show()
+		$NegativeBar/Label.text = label
 	else:
 		$NegativeBar.anchor_bottom = 0.5 + convert_to_height(value)
 		$PositiveBar.anchor_top = 0.5
-		$PositiveBar/Label.hide()
+		$PositiveBar/Label.text = label
 		$NegativeBar/Label.text = str(value)
-		$NegativeBar/Label.show()
-
+		
 func convert_to_height(num: float) -> float:
 	return (1 - exp(-GROWTH_RATE * abs(num)))/2

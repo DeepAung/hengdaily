@@ -34,6 +34,7 @@ theme_override_constants/margin_right = 20
 [node name="LoveBar" parent="MarginContainer/PanelContainer/Bars/Love/MarginContainer" instance=ExtResource("2_jrthm")]
 unique_name_in_owner = true
 layout_mode = 2
+label = "Love"
 
 [node name="Money" type="PanelContainer" parent="MarginContainer/PanelContainer/Bars"]
 layout_mode = 2
@@ -47,6 +48,7 @@ theme_override_constants/margin_right = 20
 [node name="MoneyBar" parent="MarginContainer/PanelContainer/Bars/Money/MarginContainer" instance=ExtResource("2_jrthm")]
 unique_name_in_owner = true
 layout_mode = 2
+label = "Money"
 
 [node name="Health" type="PanelContainer" parent="MarginContainer/PanelContainer/Bars"]
 layout_mode = 2
@@ -60,6 +62,7 @@ theme_override_constants/margin_right = 20
 [node name="HealthBar" parent="MarginContainer/PanelContainer/Bars/Health/MarginContainer" instance=ExtResource("2_jrthm")]
 unique_name_in_owner = true
 layout_mode = 2
+label = "Health"
 
 [node name="Study" type="PanelContainer" parent="MarginContainer/PanelContainer/Bars"]
 layout_mode = 2
@@ -73,6 +76,7 @@ theme_override_constants/margin_right = 20
 [node name="StudyBar" parent="MarginContainer/PanelContainer/Bars/Study/MarginContainer" instance=ExtResource("2_jrthm")]
 unique_name_in_owner = true
 layout_mode = 2
+label = "Study"
 
 [node name="Guidelines" type="ColorRect" parent="MarginContainer/PanelContainer"]
 custom_minimum_size = Vector2(0, 2)
