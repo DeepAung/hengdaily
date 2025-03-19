@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cetnefv8miixi" path="res://src/menus/home_menu.gd" id="1_5hbdx"]
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="1_uimqf"]
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="2_5hbdx"]
-[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="3_2be3m"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Kanit/Kanit-Bold.ttf" id="3_2be3m"]
 [ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="4_q5boe"]
 [ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="5_ckhof"]
 
