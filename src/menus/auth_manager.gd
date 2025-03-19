@@ -5,21 +5,8 @@ var isWeb : bool = Utilities.is_web();
 # usage : _ready(), _on_FirebaseAuth_login_succeeded
 var mode: String = ""
 
-func _ready():	
+func _ready():
 	if (isWeb) : # load auth infomation from localStorage
-		#TODO : these following line is inside _load_config() of firebase.gd
-		#if (Firebase._config.apiKey == "" or Firebase._config.authDomain == ""): 
-			#if (Utilities.is_web()):
-				#Firebase._config["apiKey"] = ProjectSettings.get_setting("firebase/apiKey");
-				#Firebase._config["authDomain"] = ProjectSettings.get_setting("firebase/authDomain");
-				#Firebase._config["projectId"] = ProjectSettings.get_setting("firebase/projectId");
-				#Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
-				#Firebase._config["storageBucket"] = ProjectSettings.get_setting("firebase/storageBucket");
-				#Firebase._config["messagingSenderId"] = ProjectSettings.get_setting("firebase/messagingSenderId");
-				#Firebase._config["appId"] = ProjectSettings.get_setting("firebase/appId");
-				#Firebase._config["measurementId"] = ProjectSettings.get_setting("firebase/measurementId");
-				#Firebase._setup_modules();
-				
 		var json = JSON.new()
 		var authToken = JavaScriptBridge.eval("localStorage.getItem('auth_token');");
 		if (authToken != null) :
@@ -32,7 +19,7 @@ func _ready():
 			var auth = Firebase.Auth.auth
 			_on_FirebaseAuth_login_succeeded(auth)
 			return
-# TODO : idk : if these 4 line deal with saving/loading .evn file ?????
+	
 	Firebase.Auth.login_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.signup_succeeded.connect(_on_FirebaseAuth_login_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
@@ -59,10 +46,11 @@ func _on_register_pressed():
 
 
 func _on_FirebaseAuth_login_succeeded(auth):
+	$LoadingPanel.show()
 	if (isWeb):
 		var authToken : String = JSON.stringify(auth);
 		JavaScriptBridge.eval("localStorage.setItem('auth_token', '" + authToken + "');");
-	else :
+	else:
 		var succeeded = Firebase.Auth.save_auth(auth)
 		if not succeeded: # TODO: handle error
 			print("not succeeded")
@@ -70,10 +58,12 @@ func _on_FirebaseAuth_login_succeeded(auth):
 	$Status.text =  "login successfully"
 	GameManager.auth = auth
 	if mode == "signup":
+		$LoadingPanel.hide()
 		get_tree().change_scene_to_file("res://src/menus/question_menu.tscn")
 	else: # mode == "signin"
 		# check if player exist. if not, goto question_menu to complete the registeration
 		var result = await Firebase.Firestore.collection("players").get_doc(GameManager.get_player_id())
+		$LoadingPanel.hide()
 		print("result: ", result)
 		if result == null:
 			get_tree().change_scene_to_file("res://src/menus/question_menu.tscn")

@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://rirti5s2anxq"]
+
+[ext_resource type="Script" uid="uid://db837vmuxbjwk" path="res://src/components/luck_chart.gd" id="1_0vwhh"]
+[ext_resource type="PackedScene" uid="uid://cr8v0ucjsrhh0" path="res://src/components/luck_bar.tscn" id="2_jrthm"]
+
+[node name="LuckChart" type="PanelContainer"]
+offset_right = 320.0
+offset_bottom = 187.0
+script = ExtResource("1_0vwhh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Bars" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Love" type="PanelContainer" parent="MarginContainer/PanelContainer/Bars"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/Bars/Love"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="LoveBar" parent="MarginContainer/PanelContainer/Bars/Love/MarginContainer" instance=ExtResource("2_jrthm")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Money" type="PanelContainer" parent="MarginContainer/PanelContainer/Bars"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/Bars/Money"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="MoneyBar" parent="MarginContainer/PanelContainer/Bars/Money/MarginContainer" instance=ExtResource("2_jrthm")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Health" type="PanelContainer" parent="MarginContainer/PanelContainer/Bars"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/Bars/Health"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HealthBar" parent="MarginContainer/PanelContainer/Bars/Health/MarginContainer" instance=ExtResource("2_jrthm")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Study" type="PanelContainer" parent="MarginContainer/PanelContainer/Bars"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/Bars/Study"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="StudyBar" parent="MarginContainer/PanelContainer/Bars/Study/MarginContainer" instance=ExtResource("2_jrthm")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Guidelines" type="ColorRect" parent="MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 4

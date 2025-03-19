@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://n0i6hl0xswsc"]
+[gd_scene load_steps=17 format=3 uid="uid://n0i6hl0xswsc"]
 
 [ext_resource type="Script" uid="uid://c5g3mnobn7tme" path="res://src/menus/auth_manager.gd" id="1_u8v5j"]
 [ext_resource type="Texture2D" uid="uid://dtxxj8vtbqia5" path="res://assets/craiyon_201508_game_menu_background_about_luck_with_coin_and_make_it_a_little_chinese.png" id="2_mjbfg"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dmhyp18qwyv2x" path="res://assets/GrapeSoda.ttf" id="6_ytr6k"]
 [ext_resource type="AudioStream" uid="uid://fxr0clxhnf3p" path="res://assets/sfx/hover-card.wav" id="7_mx8gd"]
 [ext_resource type="AudioStream" uid="uid://dij4vqeiofdjt" path="res://assets/sfx/click.wav" id="8_x0hco"]
+[ext_resource type="FontFile" uid="uid://lgyadp53icpt" path="res://assets/fonts/Poppins/Poppins-Bold.ttf" id="9_b5w5l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2psp5"]
 texture = ExtResource("2_mjbfg")
@@ -217,6 +218,29 @@ bus = &"Sfx"
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_x0hco")
 bus = &"Sfx"
+
+[node name="LoadingPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="LoadingPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LoadingPanel/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_b5w5l")
+theme_override_font_sizes/font_size = 48
+text = "Loading..."
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/SignInBtn" to="." method="_on_sign_in_btn_mouse_entered"]

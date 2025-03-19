@@ -11,4 +11,4 @@ func _init(display_name: String, description: String, apply_func: Callable) -> v
 	self._apply_func = apply_func
 
 func apply(player: Player) -> void:
-	self.apply.call(player)
+	self._apply_func.call(player)
